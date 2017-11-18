@@ -8,11 +8,13 @@
              :style="{'background-image':'url('+item.imgSrc+')'}"></div>
       </el-carousel-item>
     </el-carousel>
+    <search></search>
   </section>
 </template>
 
 <script>
   import MHeader from '../../components/MHeader/MHeader.vue';
+  import Search from '../../components/Search/Search.vue';
 
   export default {
     name: 'Index',
@@ -32,7 +34,8 @@
       }
     },
     components: {
-      MHeader
+      MHeader,
+      Search
     }
   }
 </script>

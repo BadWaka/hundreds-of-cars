@@ -2,7 +2,9 @@
   <header class="header">
     <!--左侧-->
     <div class="left c-gap-left-large">
-      <div class="logo"></div>
+      <div class="logo">
+        logo
+      </div>
       <div class="left-right c-gap-left">
         <div class="row1">百家车</div>
         <div class="row2 c-gap-top-small">slogan</div>
@@ -111,8 +113,12 @@
       .logo {
         width: 50px;
         height: 50px;
+        line-height: 50px;
         border-radius: 50%;
         background: $primaryColor;
+        color: #fff;
+        font-size: 12px;
+        text-align: center;
       }
 
       .left-right {
@@ -134,6 +140,7 @@
       background: $primaryColor;
       color: #fff;
       text-align: center;
+      font-size: 14px;
 
       .nav-item {
         position: relative;
