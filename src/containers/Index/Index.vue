@@ -8,12 +8,16 @@
              :style="{'background-image':'url('+item.imgSrc+')'}"></div>
       </el-carousel-item>
     </el-carousel>
+    <!--搜索-->
     <search></search>
+    <!--footer-->
+    <m-footer></m-footer>
   </section>
 </template>
 
 <script>
   import MHeader from '../../components/MHeader/MHeader.vue';
+  import MFooter from '../../components/MFooter/MFooter.vue';
   import Search from '../../components/Search/Search.vue';
 
   export default {
@@ -35,7 +39,8 @@
     },
     components: {
       MHeader,
-      Search
+      Search,
+      MFooter
     }
   }
 </script>

@@ -63,7 +63,7 @@
     .row2 {
       display: flex;
       flex-wrap: wrap;
-      padding: 15px;
+      padding: 15px ;
       background: $primaryColor;
 
       .search-item, .start-search {

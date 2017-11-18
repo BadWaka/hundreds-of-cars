@@ -147,7 +147,7 @@
         width: 120px;
         height: 60px;
         line-height: 60px;
-        border-right: 1px solid $secondColor;
+        border-right: 2px solid $secondColor;
       }
 
       .nav-item:last-child {
