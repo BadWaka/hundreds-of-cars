@@ -1,9 +1,13 @@
 @import "color";
+@import "spacing";
 
-$primaryColor: $blue500;
+$primaryColor: #4A4A4A;
+$secondColor: #979797;
 
 $contentWidth: 1000px;
 
-.gap-top {
-  margin-top: 20px;
+html {
+  font-size: 14px;
+  line-height: 24px;
 }
+

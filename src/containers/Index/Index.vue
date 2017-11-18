@@ -1,7 +1,8 @@
 <template>
   <section class="index">
+    <m-header></m-header>
     <!--轮播-->
-    <el-carousel height="500px">
+    <el-carousel height="600px">
       <el-carousel-item v-for="(item, index) in banners" :key="index">
         <div class="img"
              :style="{'background-image':'url('+item.imgSrc+')'}"></div>
@@ -11,24 +12,28 @@
 </template>
 
 <script>
+  import MHeader from '../../components/MHeader/MHeader.vue';
+
   export default {
     name: 'Index',
     data() {
       return {
         banners: [
           {
-            imgSrc: 'http://img.hb.aicdn.com/44d7e4a4a4f65e93421a0eb8292b0c17bd63d2e7544b3-xqXKft_fw658'
+            imgSrc: 'http://desk.fd.zol-img.com.cn/t_s1600x900c5/g5/M00/0F/09/ChMkJlauza6IOuzjAAQRQ6b4SjAAAH9HQJb4NcABBFb471.jpg'
           },
           {
-            imgSrc: 'http://img.hb.aicdn.com/e5994de8e9551d92236e2a7ab850c283e0d215768bdd5-3mQQF5_fw658'
+            imgSrc: 'http://desk.fd.zol-img.com.cn/t_s1920x1080c5/g5/M00/0F/09/ChMkJ1auza6ICkGRAAJCuW6kUvcAAH9HQJp9QgAAkLR000.jpg'
           },
           {
-            imgSrc: 'http://img.hb.aicdn.com/c26d7dcdce9a219ad98cbfec2c51be9e03915f1269d22-NmO1F0_fw658'
+            imgSrc: 'http://desk.fd.zol-img.com.cn/t_s1920x1200c5/g5/M00/0F/09/ChMkJlauza6IQed-ABe8YwuAco8AAH9HQLHsPAAF7x7859.jpg'
           }
         ],
       }
     },
-    components: {}
+    components: {
+      MHeader
+    }
   }
 </script>
 
@@ -39,8 +44,12 @@
     background: $grey100;
   }
 
+  .el-carousel__container {
+  }
+
   .el-carousel__item .img {
-    height: 500px;
+    width: 100%;
+    height: 100%;
     background: center no-repeat;
     background-size: cover;
   }
