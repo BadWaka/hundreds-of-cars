@@ -18,6 +18,9 @@
         v-for="(item, index) in navList"
         :key="index">
         {{item.text}}
+        <div class="wrapper">
+          wrapper
+        </div>
       </div>
       <!--登录注册-->
       <div class="login">
@@ -137,25 +140,47 @@
       display: flex;
       align-items: center;
       height: 100%;
-      background: $primaryColor;
       color: #fff;
       text-align: center;
       font-size: 14px;
 
       .nav-item {
+        transition: $transitionTime;
         position: relative;
         width: 120px;
-        height: 60px;
-        line-height: 60px;
-        border-right: 2px solid $secondColor;
-      }
+        height: 100%;
+        line-height: 100px;
+        background: $primaryColor;
 
-      .nav-item:last-child {
-        border-right: none;
+        &:after {
+          content: '';
+          position: absolute;
+          width: 2px;
+          height: 60px;
+          top: 20px;
+          right: 0;
+          background: $secondColor;
+        }
+
+        .wrapper {
+          position: absolute;
+          width: 120px;
+          top: 100px;
+          box-sizing: border-box;
+          border-left: 1px solid $secondColor;
+          z-index: 9;
+          background: #fff;
+          color: #000;
+        }
       }
 
       .login {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
         width: 120px;
+        height: 100%;
+        background: $primaryColor;
 
         .iconfont {
           font-size: 22px;
