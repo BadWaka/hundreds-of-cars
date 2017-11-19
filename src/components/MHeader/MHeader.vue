@@ -1,60 +1,63 @@
 <template>
-  <section class="header-wrapper">
-    <header class="header">
-      <!--左侧-->
-      <div class="left c-gap-left-large">
-        <div class="logo">
-          logo
+  <section class="header-wrapper2">
+    <section class="header-wrapper">
+      <div class="header-wrapper-right"></div>
+      <header class="header">
+        <!--左侧-->
+        <div class="left c-gap-left-large">
+          <div class="logo">
+            logo
+          </div>
+          <div class="left-right c-gap-left">
+            <div class="row1">百家车</div>
+            <div class="row2 c-gap-top-small">slogan</div>
+          </div>
         </div>
-        <div class="left-right c-gap-left">
-          <div class="row1">百家车</div>
-          <div class="row2 c-gap-top-small">slogan</div>
-        </div>
-      </div>
-      <!--右侧-->
-      <nav class="nav">
-        <!--导航按钮-->
-        <div
-          class="nav-item"
-          v-for="(item, index) in navList"
-          :key="index"
-          @mouseenter="handleMouseEnter(index)"
-          @mouseleave="handleMouseLeave(index)">
-          {{item.text}}
-          <transition name="fade">
-            <div
-              class="mask"
-              v-show="item.isShowMask">
+        <!--右侧-->
+        <nav class="nav">
+          <!--导航按钮-->
+          <div
+            class="nav-item"
+            v-for="(item, index) in navList"
+            :key="index"
+            @mouseenter="handleMouseEnter(index)"
+            @mouseleave="handleMouseLeave(index)">
+            {{item.text}}
+            <transition name="fade">
               <div
-                v-for="(item2, index2) in item.children"
-                :key="index2"
-                class="mask-item c-gap-inner-left-large transition-animate">
-                {{item2.text}}
+                class="mask"
+                v-show="item.isShowMask">
+                <div
+                  v-for="(item2, index2) in item.children"
+                  :key="index2"
+                  class="mask-item c-gap-inner-left-large transition-animate">
+                  {{item2.text}}
+                </div>
               </div>
-            </div>
-          </transition>
-        </div>
-        <!--登录注册-->
-        <div class="login">
-          <i class="iconfont icon-round-user-new"></i>
-          <div class="text c-gap-top">
+            </transition>
+          </div>
+          <!--登录注册-->
+          <div class="login">
+            <i class="iconfont icon-round-user-new"></i>
+            <div class="text c-gap-top">
           <span
             class="sign-in transition-animate c-btn"
             @click="handleSignInClick">
             登录
           </span>/<span
-            class="sign-up transition-animate c-btn"
-            @click="handleSignUpClick">
+              class="sign-up transition-animate c-btn"
+              @click="handleSignUpClick">
             注册
           </span>
+            </div>
           </div>
-        </div>
-      </nav>
-      <!--模态框-->
-      <modal
-        v-if="isShowModal">
-      </modal>
-    </header>
+        </nav>
+        <!--模态框-->
+        <modal
+          v-if="isShowModal">
+        </modal>
+      </header>
+    </section>
   </section>
 </template>
 
@@ -153,12 +156,28 @@
 <style lang="scss" scoped>
   @import "../../assets/app";
 
-  .header-wrapper {
+  .header-wrapper2 {
     position: fixed;
     width: 100%;
     box-shadow: 0 1px 5px 1px $primaryColor;
     background: #fff;
     z-index: 8;
+  }
+
+  .header-wrapper {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    height: 100%;
+
+    .header-wrapper-right {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 50%;
+      height: 100%;
+      background: $primaryColor;
+    }
   }
 
   .header {
@@ -168,6 +187,7 @@
     align-items: center;
     width: $contentWidth;
     height: $headerHeight;
+    z-index: 9;
 
     .left {
       display: flex;
