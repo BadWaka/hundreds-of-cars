@@ -1,8 +1,7 @@
 <template>
   <section class="index">
-    <m-header></m-header>
     <!--版心-->
-    <section class="container">
+    <section class="c-container">
       <!--轮播-->
       <el-carousel height="600px">
         <el-carousel-item v-for="(item, index) in banners" :key="index">
@@ -19,7 +18,6 @@
 </template>
 
 <script>
-  import MHeader from '../../components/MHeader/MHeader.vue';
   import MFooter from '../../components/MFooter/MFooter.vue';
   import Search from '../../components/Search/Search.vue';
 
@@ -41,7 +39,6 @@
       }
     },
     components: {
-      MHeader,
       Search,
       MFooter
     }
@@ -66,15 +63,10 @@
   }
 
   .index {
-    // background: $primaryColor;
 
-    .container {
-      padding-top: $headerHeight;
-
-      .search {
-        margin: 0 auto;
-        width: $contentWidth;
-      }
+    .search {
+      margin: 0 auto;
+      width: $contentWidth;
     }
   }
 </style>

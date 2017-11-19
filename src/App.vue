@@ -1,13 +1,18 @@
 <template>
   <div id="app">
+    <m-header></m-header>
     <router-view/>
   </div>
 </template>
 
 <script>
+  import MHeader from './components/MHeader/MHeader.vue';
+
   export default {
     name: 'app',
-    components: {},
+    components: {
+      MHeader
+    },
     data() {
       return {
         tabSelected: 0,
