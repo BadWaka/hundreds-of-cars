@@ -1,59 +1,61 @@
 <template>
-  <header class="header">
-    <!--左侧-->
-    <div class="left c-gap-left-large">
-      <div class="logo">
-        logo
+  <section class="header-wrapper">
+    <header class="header">
+      <!--左侧-->
+      <div class="left c-gap-left-large">
+        <div class="logo">
+          logo
+        </div>
+        <div class="left-right c-gap-left">
+          <div class="row1">百家车</div>
+          <div class="row2 c-gap-top-small">slogan</div>
+        </div>
       </div>
-      <div class="left-right c-gap-left">
-        <div class="row1">百家车</div>
-        <div class="row2 c-gap-top-small">slogan</div>
-      </div>
-    </div>
-    <!--右侧-->
-    <nav class="nav">
-      <!--导航按钮-->
-      <div
-        class="nav-item"
-        v-for="(item, index) in navList"
-        :key="index"
-        @mouseenter="handleMouseEnter(index)"
-        @mouseleave="handleMouseLeave(index)">
-        {{item.text}}
-        <transition name="fade">
-          <div
-            class="mask"
-            v-show="item.isShowMask">
+      <!--右侧-->
+      <nav class="nav">
+        <!--导航按钮-->
+        <div
+          class="nav-item"
+          v-for="(item, index) in navList"
+          :key="index"
+          @mouseenter="handleMouseEnter(index)"
+          @mouseleave="handleMouseLeave(index)">
+          {{item.text}}
+          <transition name="fade">
             <div
-              v-for="(item2, index2) in item.children"
-              :key="index2"
-              class="mask-item c-gap-inner-left-large transition-animate">
-              {{item2.text}}
+              class="mask"
+              v-show="item.isShowMask">
+              <div
+                v-for="(item2, index2) in item.children"
+                :key="index2"
+                class="mask-item c-gap-inner-left-large transition-animate">
+                {{item2.text}}
+              </div>
             </div>
-          </div>
-        </transition>
-      </div>
-      <!--登录注册-->
-      <div class="login">
-        <i class="iconfont icon-round-user-new"></i>
-        <div class="text c-gap-top">
+          </transition>
+        </div>
+        <!--登录注册-->
+        <div class="login">
+          <i class="iconfont icon-round-user-new"></i>
+          <div class="text c-gap-top">
           <span
             class="sign-in transition-animate c-btn"
             @click="handleSignInClick">
             登录
           </span>/<span
-          class="sign-up transition-animate c-btn"
-          @click="handleSignUpClick">
+            class="sign-up transition-animate c-btn"
+            @click="handleSignUpClick">
             注册
           </span>
+          </div>
         </div>
-      </div>
-    </nav>
-    <!--模态框-->
-    <modal
-      v-if="isShowModal">
-    </modal>
-  </header>
+      </nav>
+      <!--模态框-->
+      <modal
+        v-if="isShowModal">
+      </modal>
+    </header>
+  </section>
 </template>
 
 <script>
@@ -151,16 +153,21 @@
 <style lang="scss" scoped>
   @import "../../assets/app";
 
-  .header {
+  .header-wrapper {
     position: fixed;
+    width: 100%;
+    box-shadow: 0 1px 5px 1px $primaryColor;
+    background: #fff;
+    z-index: 8;
+  }
+
+  .header {
+    margin: 0 auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 100%;
+    width: $contentWidth;
     height: $headerHeight;
-    background: #fff;
-    box-shadow: 0 1px 5px 1px $primaryColor;
-    z-index: 8;
 
     .left {
       display: flex;
@@ -202,7 +209,7 @@
         position: relative;
         width: 120px;
         height: 100%;
-        line-height: 100px;
+        line-height: $headerHeight;
         background: $primaryColor;
         cursor: pointer;
 
@@ -211,7 +218,7 @@
           position: absolute;
           width: 2px;
           height: 60px;
-          top: 20px;
+          top: 10px;
           right: 0;
           background: $secondColor;
         }
@@ -219,7 +226,7 @@
         .mask {
           position: absolute;
           width: 120px;
-          top: 100px;
+          top: $headerHeight;
           box-sizing: border-box;
           border-left: 1px solid $secondColor;
           z-index: 9;

@@ -11,10 +11,10 @@
         </el-carousel-item>
       </el-carousel>
       <!--搜索-->
-      <search></search>
-      <!--footer-->
-      <m-footer></m-footer>
+      <search class="search"></search>
     </section>
+    <!--footer-->
+    <m-footer></m-footer>
   </section>
 </template>
 
@@ -65,9 +65,16 @@
     background-size: cover;
   }
 
-  .container {
-    margin: 0 auto;
-    padding-top: $headerHeight;
-    width: 1368px;
+  .index {
+    // background: $primaryColor;
+
+    .container {
+      padding-top: $headerHeight;
+
+      .search {
+        margin: 0 auto;
+        width: $contentWidth;
+      }
+    }
   }
 </style>
