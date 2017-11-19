@@ -1,17 +1,20 @@
 <template>
   <section class="index">
     <m-header></m-header>
-    <!--轮播-->
-    <el-carousel height="600px">
-      <el-carousel-item v-for="(item, index) in banners" :key="index">
-        <div class="img"
-             :style="{'background-image':'url('+item.imgSrc+')'}"></div>
-      </el-carousel-item>
-    </el-carousel>
-    <!--搜索-->
-    <search></search>
-    <!--footer-->
-    <m-footer></m-footer>
+    <!--版心-->
+    <section class="container">
+      <!--轮播-->
+      <el-carousel height="600px">
+        <el-carousel-item v-for="(item, index) in banners" :key="index">
+          <div class="img"
+               :style="{'background-image':'url('+item.imgSrc+')'}"></div>
+        </el-carousel-item>
+      </el-carousel>
+      <!--搜索-->
+      <search></search>
+      <!--footer-->
+      <m-footer></m-footer>
+    </section>
   </section>
 </template>
 
@@ -60,5 +63,11 @@
     height: 100%;
     background: center no-repeat;
     background-size: cover;
+  }
+
+  .container {
+    margin: 0 auto;
+    padding-top: $headerHeight;
+    width: 1368px;
   }
 </style>

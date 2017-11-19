@@ -37,7 +37,8 @@
       <div class="login">
         <i class="iconfont icon-round-user-new"></i>
         <div class="text c-gap-top">
-          登录/注册
+          <span class="sign-in transition-animate c-btn">登录</span>/<span
+          class="sign-up transition-animate c-btn">注册</span>
         </div>
       </div>
     </nav>
@@ -115,14 +116,9 @@
     },
     methods: {
       handleMouseEnter(index) {
-        console.log('handleMouseEnter', index);
-//        this.navList.forEach((item) => {
-//          this.navList[index].isShowMask = false;
-//        });
         this.navList[index].isShowMask = true;
       },
       handleMouseLeave(index) {
-        console.log('handleMouseLeave', index);
         this.navList[index].isShowMask = false;
       }
     }
@@ -133,10 +129,15 @@
   @import "../../assets/app";
 
   .header {
+    position: fixed;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 100px;
+    width: 100%;
+    height: $headerHeight;
+    background: #fff;
+    box-shadow: 0 1px 5px 1px $primaryColor;
+    z-index: 8;
 
     .left {
       display: flex;
@@ -229,6 +230,10 @@
 
         .text {
           font-size: 12px;
+
+          span:hover {
+            opacity: .7;
+          }
         }
       }
     }
