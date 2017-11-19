@@ -16,11 +16,22 @@
       <div
         class="nav-item"
         v-for="(item, index) in navList"
-        :key="index">
+        :key="index"
+        @mouseenter="handleMouseEnter(index)"
+        @mouseleave="handleMouseLeave(index)">
         {{item.text}}
-        <div class="wrapper">
-          wrapper
-        </div>
+        <transition name="fade">
+          <div
+            class="mask"
+            v-show="item.isShowMask">
+            <div
+              v-for="(item2, index2) in item.children"
+              :key="index2"
+              class="mask-item c-gap-inner-left-large transition-animate">
+              {{item2.text}}
+            </div>
+          </div>
+        </transition>
       </div>
       <!--登录注册-->
       <div class="login">
@@ -41,6 +52,7 @@
         navList: [
           {
             text: '地区选择',
+            isShowMask: false,
             children: [
               {
                 text: '自动定位'
@@ -52,49 +64,66 @@
           },
           {
             text: '买车',
+            isShowMask: false,
             children: [
               {
-                text: '自动定位'
+                text: '按品牌'
               },
               {
-                text: '手动输入'
+                text: '按车型'
               }
             ]
           },
           {
             text: '卖车',
+            isShowMask: false,
             children: [
               {
-                text: '自动定位'
+                text: '私人卖家'
               },
               {
-                text: '手动输入'
+                text: '经销商'
               }
             ]
           },
           {
             text: '金融',
+            isShowMask: false,
             children: [
               {
-                text: '自动定位'
+                text: '金融计算器'
               },
               {
-                text: '手动输入'
+                text: '贷款申请'
+              },
+              {
+                text: '经销商'
               }
             ]
           },
           {
             text: '物流',
+            isShowMask: false,
             children: [
               {
-                text: '自动定位'
-              },
-              {
-                text: '手动输入'
+                text: '拖车服务'
               }
             ]
           }
         ]
+      }
+    },
+    methods: {
+      handleMouseEnter(index) {
+        console.log('handleMouseEnter', index);
+//        this.navList.forEach((item) => {
+//          this.navList[index].isShowMask = false;
+//        });
+        this.navList[index].isShowMask = true;
+      },
+      handleMouseLeave(index) {
+        console.log('handleMouseLeave', index);
+        this.navList[index].isShowMask = false;
       }
     }
   }
@@ -151,6 +180,7 @@
         height: 100%;
         line-height: 100px;
         background: $primaryColor;
+        cursor: pointer;
 
         &:after {
           content: '';
@@ -162,7 +192,7 @@
           background: $secondColor;
         }
 
-        .wrapper {
+        .mask {
           position: absolute;
           width: 120px;
           top: 100px;
@@ -171,6 +201,17 @@
           z-index: 9;
           background: #fff;
           color: #000;
+
+          .mask-item {
+            height: 40px;
+            line-height: 40px;
+            text-align: left;
+
+            &:hover {
+              background: $secondColor;
+              color: #fff;
+            }
+          }
         }
       }
 
