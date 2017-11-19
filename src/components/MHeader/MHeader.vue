@@ -37,19 +37,33 @@
       <div class="login">
         <i class="iconfont icon-round-user-new"></i>
         <div class="text c-gap-top">
-          <span class="sign-in transition-animate c-btn">登录</span>/<span
-          class="sign-up transition-animate c-btn">注册</span>
+          <span
+            class="sign-in transition-animate c-btn"
+            @click="handleSignInClick">
+            登录
+          </span>/<span
+          class="sign-up transition-animate c-btn"
+          @click="handleSignUpClick">
+            注册
+          </span>
         </div>
       </div>
     </nav>
+    <!--模态框-->
+    <modal
+      v-if="isShowModal">
+    </modal>
   </header>
 </template>
 
 <script>
+  import Modal from '../Modal/Modal.vue';
+
   export default {
     name: 'Header',
     data() {
       return {
+        isShowModal: false,
         navList: [
           {
             text: '地区选择',
@@ -120,7 +134,16 @@
       },
       handleMouseLeave(index) {
         this.navList[index].isShowMask = false;
+      },
+      handleSignInClick() {
+        console.log('点击登录');
+      },
+      handleSignUpClick() {
+        console.log('点击注册');
       }
+    },
+    components: {
+      Modal
     }
   }
 </script>
