@@ -1,6 +1,5 @@
 <template>
   <section class="filter">
-    <m-header></m-header>
     <!--版心-->
     <section class="c-container">
       <!--轮播-->
@@ -11,8 +10,6 @@
         </el-carousel-item>
       </el-carousel>
     </section>
-    <!--footer-->
-    <m-footer></m-footer>
   </section>
 </template>
 

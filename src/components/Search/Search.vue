@@ -66,6 +66,7 @@
     font-size: 14px;
     color: #fff;
     text-align: center;
+    box-sizing: border-box;
 
     .row1 {
       display: flex;
@@ -91,8 +92,9 @@
     .row2 {
       display: flex;
       flex-wrap: wrap;
-      padding: 0 15px 15px 15px;
+      padding: 0 20px 15px 20px;
       background: $primaryColor;
+      box-sizing: border-box;
 
       .search {
         width: 100%;
@@ -105,7 +107,7 @@
 
       .search-item, .start-search {
         position: relative;
-        width: 33.3%;
+        width: 328px;
         height: 50px;
         line-height: 50px;
         border-right: 1px solid $secondColor;

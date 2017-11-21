@@ -2,16 +2,19 @@
   <div id="app">
     <m-header></m-header>
     <router-view/>
+    <m-footer></m-footer>
   </div>
 </template>
 
 <script>
   import MHeader from './components/MHeader/MHeader.vue';
+  import MFooter from './components/MFooter/MFooter.vue';
 
   export default {
     name: 'app',
     components: {
-      MHeader
+      MHeader,
+      MFooter
     },
     data() {
       return {

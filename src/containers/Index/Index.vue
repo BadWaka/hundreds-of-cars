@@ -12,8 +12,6 @@
       <!--搜索-->
       <search class="search"></search>
     </section>
-    <!--footer-->
-    <m-footer></m-footer>
   </section>
 </template>
 
