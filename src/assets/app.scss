@@ -4,9 +4,10 @@
 
 $transitionTime: .3s;
 
-html {
+html, body {
   font-size: 14px;
   line-height: 24px;
+  background: $backgroundColor;
 }
 
 .c-container {

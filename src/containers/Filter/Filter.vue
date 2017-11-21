@@ -19,7 +19,11 @@
           <filter-top></filter-top>
           <!--下部内容-->
           <section class="content c-gap-top-20">
-            <car-card></car-card>
+            <car-card
+              class="c-gap-top-20"
+              v-for="(item, index) in 6"
+              :key="index">
+            </car-card>
           </section>
         </section>
       </section>

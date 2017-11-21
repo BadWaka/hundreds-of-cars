@@ -87,6 +87,7 @@
       border-right: 1px solid $secondColor;
       border-bottom: 1px solid $secondColor;
       box-sizing: border-box;
+      background: #fff;
     }
   }
 </style>

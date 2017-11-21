@@ -31,12 +31,14 @@
   }
 </script>
 
-<style>
+<style lang="scss">
   @import "assets/reset.scss";
+  @import "assets/app.scss";
 
   #app {
     font-family: 'Avenir', Helvetica, Arial, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    background: $backgroundColor;
   }
 </style>

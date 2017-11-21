@@ -6,7 +6,7 @@
       :style="{'background-image':'url('+imgSrc+')'}">
     </div>
     <!--中间-->
-    <section class="middle">
+    <section class="middle c-gap-inner-left-20">
       <h2 class="row1">
         {{title}}
       </h2>
@@ -31,7 +31,9 @@
     </section>
     <!--右侧-->
     <section class="right">
-
+      <div class="c-gap-bottom-20">车行信息</div>
+      <div class="c-gap-bottom-20">车行编号</div>
+      <div>联系方式</div>
     </section>
   </section>
 </template>
@@ -63,8 +65,9 @@
 
   .car-card {
     display: flex;
-    padding: 20px 40px;
+    padding: 20px 0 20px 40px;
     border: 1px solid $secondColor;
+    background: #fff;
 
     .left-img {
       background: center no-repeat;
@@ -75,6 +78,15 @@
 
     .middle {
       width: 350px;
+      border-right: 1px solid $secondColor;
+    }
+
+    .right {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
     }
   }
 </style>
