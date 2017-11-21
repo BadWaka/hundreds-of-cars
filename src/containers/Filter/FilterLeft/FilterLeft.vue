@@ -71,8 +71,6 @@
   @import "../../../assets/app";
 
   .filter-left {
-    border-top: 1px solid $secondColor;
-    border-left: 1px solid $secondColor;
     box-sizing: border-box;
 
     .top {
@@ -85,6 +83,7 @@
       height: 50px;
       line-height: 50px;
       text-align: center;
+      border-left: 1px solid $secondColor;
       border-right: 1px solid $secondColor;
       border-bottom: 1px solid $secondColor;
       box-sizing: border-box;

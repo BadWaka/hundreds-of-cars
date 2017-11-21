@@ -18,8 +18,8 @@
           <!--顶部-->
           <filter-top></filter-top>
           <!--下部内容-->
-          <section class="content">
-
+          <section class="content c-gap-top-20">
+            <car-card></car-card>
           </section>
         </section>
       </section>
@@ -30,6 +30,7 @@
 <script>
   import FilterTop from './FilterTop/FilterTop.vue';
   import FilterLeft from './FilterLeft/FilterLeft.vue';
+  import CarCard from '../../components/CarCard/CarCard.vue';
 
   export default {
     name: 'Filter',
@@ -50,7 +51,8 @@
     },
     components: {
       FilterTop,
-      FilterLeft
+      FilterLeft,
+      CarCard
     }
   }
 </script>
@@ -78,6 +80,13 @@
       display: flex;
       justify-content: space-between;
       margin: 0 auto;
+
+      .right {
+
+        .content {
+
+        }
+      }
     }
   }
 </style>

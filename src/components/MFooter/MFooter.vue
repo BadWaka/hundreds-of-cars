@@ -29,7 +29,9 @@
   @import "../../assets/app.scss";
 
   .footer {
-    padding: 100px 200px;
+    margin: 0 auto;
+    width: $contentWidth;
+    padding: 100px 0;
     background: #fff;
     color: $primaryColor;
 

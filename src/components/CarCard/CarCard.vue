@@ -1,59 +1,58 @@
 <template>
-  <section class="search">
-    <div class="row1 c-gap-inner-left-large">
-      <div
-        v-for="(item, index) in searchTabs"
-        class="item c-btn transition-animate">
-        {{item.text}}
+  <section class="car-card">
+    <!--左边的图-->
+    <div
+      class="left-img"
+      :style="{'background-image':'url('+imgSrc+')'}">
+    </div>
+    <!--中间-->
+    <section class="middle">
+      <h2 class="row1">
+        {{title}}
+      </h2>
+      <div class="row2">
+        <span>{{price}}</span>
+        <span class="c-gap-left">官方零售价：{{officePrice}}</span>
       </div>
-    </div>
-    <div class="row2">
-      <section class="search">
-        <div
-          v-for="(item, index) in searchList"
-          class="search-item">
-          {{item.text}}
-          <i class="el-icon-arrow-down"></i>
-        </div>
-        <div class="start-search">
-          开始搜索
-          <i class="el-icon-arrow-right"></i>
-        </div>
-      </section>
-    </div>
+      <div class="row3">
+        距离：{{distance}}
+      </div>
+      <div class="row4">
+        里程数：{{mileage}}
+      </div>
+      <div class="row5">
+        <span>车身颜色：{{carColor}}</span>
+        <span>内饰颜色：{{insideColor}}</span>
+      </div>
+      <div class="row6">
+        <span>油耗：{{fuelConsumption}}</span>
+        <span>车体：{{carBody}}</span>
+      </div>
+    </section>
+    <!--右侧-->
+    <section class="right">
+
+    </section>
   </section>
 </template>
 
 <script>
   export default {
-    name: 'Search',
+    name: 'CarCard',
     data() {
       return {
-        searchTabs: [
-          {
-            text: '品牌搜索',
-          },
-          {
-            text: '车型搜索',
-          }
-        ],
-        searchList: [
-          {
-            text: '新车&二手车'
-          },
-          {
-            text: '汽车型号'
-          },
-          {
-            text: '预算上限'
-          },
-          {
-            text: '汽车品牌'
-          },
-          {
-            text: '距离'
-          }
-        ]
+        imgSrc: 'http://img.hb.aicdn.com/aaab09042b57e0a1def2b0db78b0d0a724a0e38d15c47a-WdWpa0_fw658',
+        title: '新款 2016一汽-大众 CC 1.8T',
+        price: '17.70万起',
+        officePrice: '18.9万起',
+        distance: '5公里',
+        mileage: '3000公里',
+        carColor: '白色',
+        insideColor: '沙色/黑色',
+        // 油耗
+        fuelConsumption: '7.5L',
+        carBody: '三厢',
+        isStar: false,
       }
     }
   }
@@ -62,85 +61,20 @@
 <style lang="scss" scoped>
   @import "../../assets/app";
 
-  .search {
-    font-size: 14px;
-    color: #fff;
-    text-align: center;
-    box-sizing: border-box;
+  .car-card {
+    display: flex;
+    padding: 20px 40px;
+    border: 1px solid $secondColor;
 
-    .row1 {
-      display: flex;
-      align-items: center;
-      height: 50px;
-      line-height: 50px;
-      background: $primaryColor;
-
-      .item {
-        width: 150px;
-        height: 30px;
-        line-height: 30px;
-        border: 1px solid #fff;
-        box-sizing: border-box;
-
-        &:hover {
-          background: #fff;
-          color: #000;
-        }
-      }
+    .left-img {
+      background: center no-repeat;
+      background-size: cover;
+      width: 280px;
+      height: 160px;
     }
 
-    .row2 {
-      display: flex;
-      flex-wrap: wrap;
-      padding: 0 20px 15px 20px;
-      background: $primaryColor;
-      box-sizing: border-box;
-
-      .search {
-        width: 100%;
-        display: flex;
-        flex-wrap: wrap;
-        border-left: 1px solid $secondColor;
-        border-top: 1px solid $secondColor;
-        box-sizing: border-box;
-      }
-
-      .search-item, .start-search {
-        position: relative;
-        width: 328px;
-        height: 50px;
-        line-height: 50px;
-        border-right: 1px solid $secondColor;
-        border-bottom: 1px solid $secondColor;
-        box-sizing: border-box;
-        background: #fff;
-        color: #000;
-        transition: $transitionTime;
-        cursor: pointer;
-
-        &:hover {
-          // color: #fff;
-          // background: $greenColor;
-          // border-color: $greenColor;
-        }
-
-        .el-icon-arrow-down, .el-icon-arrow-right {
-          position: absolute;
-          top: 11px;
-          right: 20px;
-          font-size: 24px;
-        }
-
-        .el-icon-arrow-right {
-          top: 12px;
-        }
-      }
-
-      .start-search {
-        color: #fff;
-        background: $greenColor;
-        border-color: $greenColor;
-      }
+    .middle {
+      width: 350px;
     }
   }
 </style>
