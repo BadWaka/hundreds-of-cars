@@ -1,5 +1,12 @@
 // 全局间距样式
 
+$headerHeight: 80px;
+$contentWidth: 1025px;
+
+.c-gap-inner-header {
+  padding-top: $headerHeight;
+}
+
 // margin
 
 .c-gap-top {

@@ -1,14 +1,14 @@
 <template>
-  <section class="filter">
+  <section class="filter c-gap-inner-header">
+    <!--轮播-->
+    <el-carousel height="600px">
+      <el-carousel-item v-for="(item, index) in banners" :key="index">
+        <div class="img"
+             :style="{'background-image':'url('+item.imgSrc+')'}"></div>
+      </el-carousel-item>
+    </el-carousel>
     <!--版心-->
     <section class="c-container">
-      <!--轮播-->
-      <el-carousel height="600px">
-        <el-carousel-item v-for="(item, index) in banners" :key="index">
-          <div class="img"
-               :style="{'background-image':'url('+item.imgSrc+')'}"></div>
-        </el-carousel-item>
-      </el-carousel>
       <!--下方-->
       <section class="bottom">
         <!--左侧-->
@@ -76,6 +76,8 @@
 
     .bottom {
       display: flex;
+      justify-content: space-between;
+      margin: 0 auto;
     }
   }
 </style>
