@@ -1,5 +1,5 @@
 <template>
-  <section>
+  <section class="footer-wrapper">
     <footer class="footer">
       <div class="title">{{title}}</div>
       <div v-for="(item, index) in infos" :key="index" class="info-item">{{item}}</div>
@@ -28,12 +28,16 @@
 <style lang="scss" scoped>
   @import "../../assets/app.scss";
 
+  .footer-wrapper {
+    margin-top: 40px;
+    background: $primaryColor;
+  }
+
   .footer {
     margin: 0 auto;
     width: $contentWidth;
     padding: 100px 0;
-    background: #fff;
-    color: $primaryColor;
+    color: #fff;
 
     .title {
       margin-bottom: 50px;
