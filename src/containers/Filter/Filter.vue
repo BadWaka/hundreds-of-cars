@@ -9,17 +9,30 @@
                :style="{'background-image':'url('+item.imgSrc+')'}"></div>
         </el-carousel-item>
       </el-carousel>
+      <!--下方-->
+      <section class="bottom">
+        <!--左侧-->
+        <filter-left></filter-left>
+        <!--右侧-->
+        <section class="right">
+          <!--顶部-->
+          <filter-top></filter-top>
+          <!--下部内容-->
+          <section class="content">
+
+          </section>
+        </section>
+      </section>
     </section>
   </section>
 </template>
 
 <script>
-  import MHeader from '../../components/MHeader/MHeader.vue';
-  import MFooter from '../../components/MFooter/MFooter.vue';
-  import Search from '../../components/Search/Search.vue';
+  import FilterTop from './FilterTop/FilterTop.vue';
+  import FilterLeft from './FilterLeft/FilterLeft.vue';
 
   export default {
-    name: 'Index',
+    name: 'Filter',
     data() {
       return {
         banners: [
@@ -36,9 +49,8 @@
       }
     },
     components: {
-      MHeader,
-      Search,
-      MFooter
+      FilterTop,
+      FilterLeft
     }
   }
 </script>
@@ -60,12 +72,10 @@
     background-size: cover;
   }
 
-  .index {
-    // background: $primaryColor;
+  .filter {
 
-    .search {
-      margin: 0 auto;
-      width: $contentWidth;
+    .bottom {
+      display: flex;
     }
   }
 </style>
