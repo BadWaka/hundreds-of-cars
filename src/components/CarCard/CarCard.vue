@@ -6,27 +6,39 @@
       :style="{'background-image':'url('+imgSrc+')'}">
     </div>
     <!--中间-->
-    <section class="middle c-gap-inner-left-20">
+    <section class="middle c-gap-inner-left-20 c-gap-inner-right-20">
       <h2 class="row1">
         {{title}}
       </h2>
       <div class="row2">
-        <span>{{price}}</span>
-        <span class="c-gap-left">官方零售价：{{officePrice}}</span>
+        <span class="c-font-big">{{price}}</span>
+        <span class="c-gap-left c-color-grey">官方零售价：{{officePrice}}</span>
       </div>
-      <div class="row3">
+      <div class="row3 c-color-grey">
         距离：{{distance}}
       </div>
-      <div class="row4">
-        里程数：{{mileage}}
+      <div class="row4 c-gap-top">
+        <span class="c-color-grey">里程数：</span>{{mileage}}
       </div>
       <div class="row5">
-        <span>车身颜色：{{carColor}}</span>
-        <span>内饰颜色：{{insideColor}}</span>
+        <span>
+          <span class="c-color-grey">车身颜色：</span>
+          {{carColor}}
+        </span>
+        <span>
+          <span class="c-color-grey">内饰颜色：</span>
+          {{insideColor}}
+        </span>
       </div>
       <div class="row6">
-        <span>油耗：{{fuelConsumption}}</span>
-        <span>车体：{{carBody}}</span>
+        <span>
+          <span class="c-color-grey">油耗：</span>
+          {{fuelConsumption}}
+        </span>
+        <span>
+          <span class="c-color-grey">车体：</span>
+          {{carBody}}
+        </span>
       </div>
     </section>
     <!--右侧-->
@@ -79,6 +91,11 @@
     .middle {
       width: 350px;
       border-right: 1px solid $secondColor;
+
+      .row2, .row5, .row6 {
+        display: flex;
+        justify-content: space-between;
+      }
     }
 
     .right {
