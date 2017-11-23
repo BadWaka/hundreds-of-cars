@@ -44,6 +44,10 @@
           {{carBody}}
         </span>
       </div>
+      <!--收藏-->
+      <div class="star">
+
+      </div>
     </section>
     <!--右侧-->
     <section class="right">
