@@ -14,11 +14,15 @@
         <span class="c-font-big">{{price}}</span>
         <span class="c-gap-left c-color-grey">官方零售价：{{officePrice}}</span>
       </div>
-      <div class="row3 c-color-grey">
-        距离：{{distance}}
-      </div>
-      <div class="row4 c-gap-top">
-        <span class="c-color-grey">里程数：</span>{{mileage}}
+      <div class="row4 c-gap-top-20">
+        <span>
+          <span class="c-color-grey">距离：</span>
+          {{distance}}
+        </span>
+        <span>
+          <span class="c-color-grey">里程数：</span>
+          {{mileage}}
+        </span>
       </div>
       <div class="row5">
         <span>
@@ -77,7 +81,7 @@
 
   .car-card {
     display: flex;
-    padding: 20px 0 20px 40px;
+    padding: 20px 0 20px 20px;
     border: 1px solid $secondColor;
     background: #fff;
 
@@ -92,7 +96,7 @@
       width: 350px;
       border-right: 1px solid $secondColor;
 
-      .row2, .row5, .row6 {
+      .row2, .row5, .row4, .row6 {
         display: flex;
         justify-content: space-between;
       }
