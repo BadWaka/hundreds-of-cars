@@ -1,9 +1,10 @@
 <template>
-  <section class="filter-top">
+  <section class="filter-top c-gap-top-20">
     <div
-      class="item"
+      class="item c-btn"
       v-for="(item, index) in list">
       {{item.text}}
+      <i class="el-icon-arrow-down icon"></i>
     </div>
   </section>
 </template>
@@ -48,6 +49,7 @@
     height: 60px;
 
     .item {
+      position: relative;
       width: 150px;
       height: 30px;
       line-height: 30px;
@@ -57,6 +59,13 @@
       border-bottom: 1px solid $primaryColor;
       border-right: 1px solid $primaryColor;
       box-sizing: border-box;
+
+      .icon {
+        position: absolute;
+        top: 6px;
+        right: 10px;
+        font-size: 16px;
+      }
     }
   }
 </style>

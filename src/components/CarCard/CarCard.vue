@@ -46,7 +46,7 @@
       </div>
       <!--收藏-->
       <div
-        class="star"
+        class="star c-btn"
         @click="handleStarClick">
         <i
           v-if="isStar"
@@ -89,6 +89,7 @@
     },
     methods: {
       handleStarClick() {
+        this.isStar = !this.isStar;
         this.$emit('onStarClick');
       }
     }
@@ -128,10 +129,9 @@
         justify-content: center;
         align-items: center;
         top: -12px;
-        right: -15px;
+        right: -12px;
         background: #fff;
         font-size: 12px;
-        cursor: pointer;
 
         & i {
           font-size: 18px;
