@@ -29,7 +29,7 @@
   @import "../../assets/app.scss";
 
   .footer-wrapper {
-    margin-top: 40px;
+    margin-top: 20px;
     background: $primaryColor;
   }
 

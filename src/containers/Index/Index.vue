@@ -10,7 +10,7 @@
     <!--版心-->
     <section class="c-container">
       <!--搜索-->
-      <search class="search"></search>
+      <search class="search c-gap-inner-top-20"></search>
     </section>
   </section>
 </template>
