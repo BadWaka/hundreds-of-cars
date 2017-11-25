@@ -45,8 +45,18 @@
         </span>
       </div>
       <!--收藏-->
-      <div class="star">
-
+      <div
+        class="star"
+        @click="handleStarClick">
+        <i
+          v-if="isStar"
+          class="el-icon-star-on">
+        </i>
+        <i
+          v-if="!isStar"
+          class="el-icon-star-off">
+        </i>
+        收藏
       </div>
     </section>
     <!--右侧-->
@@ -76,6 +86,11 @@
         carBody: '三厢',
         isStar: false,
       }
+    },
+    methods: {
+      handleStarClick() {
+        this.$emit('onStarClick');
+      }
     }
   }
 </script>
@@ -97,12 +112,30 @@
     }
 
     .middle {
+      position: relative;
       width: 350px;
       border-right: 1px solid $secondColor;
 
       .row2, .row5, .row4, .row6 {
         display: flex;
         justify-content: space-between;
+      }
+
+      .star {
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        top: -12px;
+        right: -15px;
+        background: #fff;
+        font-size: 12px;
+        cursor: pointer;
+
+        & i {
+          font-size: 18px;
+        }
       }
     }
 
