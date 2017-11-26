@@ -1,5 +1,7 @@
 <template>
-  <section class="car-card">
+  <section
+    class="car-card"
+    @click.stop="handleClick">
     <!--左边的图-->
     <div
       class="left-img"
@@ -90,6 +92,9 @@
       handleStarClick() {
         this.isStar = !this.isStar;
         this.$emit('onStarClick');
+      },
+      handleClick() {
+        this.$emit('click');
       }
     }
   }
@@ -103,6 +108,7 @@
     padding: 20px 0 20px 20px;
     border: 1px solid $secondColor;
     background: #fff;
+    cursor: pointer;
 
     .left-img {
       background: center no-repeat;

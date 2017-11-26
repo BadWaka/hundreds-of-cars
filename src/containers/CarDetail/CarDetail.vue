@@ -91,7 +91,7 @@
         <section class="wrapper c-flex c-gap-top-20">
           <!--左边-->
           <div class="left">
-            <div class="row1">left</div>
+            <div class="row1">中单车行</div>
             <!--第二行-->
             <div class="row2 c-flex">
               <!--左边的图-->
@@ -101,15 +101,16 @@
                 <div class="row11 c-flex">
                   <!--评分-->
                   <el-rate
-                    v-model="value5"
+                    v-model="carInfo.dealerInfo.rate"
                     disabled
                     show-score
                     text-color="#ff9900"
                     score-template="{value}">
                   </el-rate>
-                  <span class="c-gap-left-small">566评价</span>
+                  <span class="c-gap-left">566评价</span>
                 </div>
                 <div class="row22">
+                  <i class="iconfont icon-edit c-gap-right-small"></i>
                   写车行评价
                 </div>
                 <div class="row33">
@@ -126,33 +127,38 @@
           </div>
           <!--右边-->
           <div class="right">
-            <div class="row1">欲想与此经销商购买或卖出请点击这里</div>
-            <!--第二行-->
-            <div class="row2 c-flex">
-              <!--左边的图-->
-              <div class="left-img"></div>
-              <!--右边的信息-->
-              <div class="right2 c-gap-left-20">
-                <el-button
-                  class="btn-item"
-                  type="success"
-                  size="mini">
-                  查看存货
-                </el-button>
-                <el-button
-                  class="btn-item"
-                  type="success"
-                  size="mini">
-                  致电车行
-                </el-button>
-                <el-button
-                  class="btn-item"
-                  type="success"
-                  size="mini">
-                  地图
-                </el-button>
+            <section>
+              <div class="row1">
+                <i class="iconfont icon-yaochi"></i>
+                欲想与此经销商购买或卖出请点击这里
               </div>
-            </div>
+              <!--第二行-->
+              <div class="row2 c-flex">
+                <!--左边的图-->
+                <div class="left-img"></div>
+                <!--右边的信息-->
+                <div class="right2 c-gap-left-20">
+                  <el-button
+                    class="btn-item"
+                    type="success"
+                    size="mini">
+                    查看存货
+                  </el-button>
+                  <el-button
+                    class="btn-item"
+                    type="success"
+                    size="mini">
+                    致电车行
+                  </el-button>
+                  <el-button
+                    class="btn-item"
+                    type="success"
+                    size="mini">
+                    地图
+                  </el-button>
+                </div>
+              </div>
+            </section>
           </div>
         </section>
       </div>
@@ -257,7 +263,10 @@
               text: 'XX'
             }
           ],
-          dealerSendWord: '大众CC是一款经济适用车型. 这台2015款二手CC配置了倒车影像, 为新手司机__________________________'
+          dealerSendWord: '大众CC是一款经济适用车型. 这台2015款二手CC配置了倒车影像, 为新手司机__________________________',
+          dealerInfo: {
+            rate: 3
+          }
         }
       }
     },
@@ -346,6 +355,7 @@
         width: 50%;
 
         .row2 {
+          margin-top: 20px;
           align-items: flex-start;
 
           .left-img {

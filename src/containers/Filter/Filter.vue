@@ -24,7 +24,8 @@
             <car-card
               class="c-gap-top-20"
               v-for="(item, index) in 6"
-              :key="index">
+              :key="index"
+              @click="handleCarCardClick(item, index)">
             </car-card>
           </section>
         </section>
@@ -59,6 +60,11 @@
       FilterTop,
       FilterLeft,
       CarCard
+    },
+    methods: {
+      handleCarCardClick(item, index) {
+        this.$router.push('/cardetail');
+      }
     }
   }
 </script>
