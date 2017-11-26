@@ -60,9 +60,12 @@
             {{item.text}}
           </div>
         </section>
+        <div class="btn-row c-flex c-gap-top">
+          <el-button size="mini">更多</el-button>
+        </div>
       </div>
       <!--标准配置-->
-      <div class="standard-config">
+      <div class="standard-config c-gap-top-20">
         <div class="row1">标准配置</div>
         <section class="c-flex box c-gap-top-20">
           <div
@@ -71,6 +74,9 @@
             {{item.text}}
           </div>
         </section>
+        <div class="btn-row c-flex c-gap-top">
+          <el-button size="mini">更多</el-button>
+        </div>
       </div>
       <!--经销商寄语-->
       <div class="dealer-send-word">
@@ -221,15 +227,19 @@
 
       .item {
         display: flex;
-        padding-left: 100px;
         width: 50%;
         box-sizing: border-box;
 
         & > span {
           display: inline-block;
+          padding-left: 100px;
           width: 50%;
         }
       }
+    }
+
+    .btn-row {
+      justify-content: flex-end;
     }
 
     .dealer-send-word-box {
@@ -237,7 +247,7 @@
     }
   }
 
-  .light-spot-config,.standard-config {
+  .light-spot-config, .standard-config {
 
     .box {
       flex-wrap: wrap;
