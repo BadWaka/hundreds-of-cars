@@ -55,23 +55,24 @@
             </div>
           </div>
         </nav>
-        <!--模态框-->
-        <modal
+        <!--金融计算器模态框-->
+        <financial-calculator-modal
+          class="financial-calculator"
           v-if="isShowModal">
-        </modal>
+        </financial-calculator-modal>
       </header>
     </section>
   </section>
 </template>
 
 <script>
-  import Modal from '../Modal/Modal.vue';
+  import FinancialCalculatorModal from '../../containers/FinancialCalculatorModal/FinancialCalculatorModal.vue';
 
   export default {
     name: 'Header',
     data() {
       return {
-        isShowModal: false,
+        isShowModal: true,
         navList: [
           {
             text: '地区选择',
@@ -160,7 +161,7 @@
       }
     },
     components: {
-      Modal
+      FinancialCalculatorModal
     }
   }
 </script>

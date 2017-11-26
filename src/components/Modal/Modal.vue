@@ -31,8 +31,8 @@
     background: $primaryColor50;
 
     .modal {
-      padding: 80px;
       background: #fff;
+      box-sizing: border-box;
     }
   }
 
