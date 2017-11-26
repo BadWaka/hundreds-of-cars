@@ -33,6 +33,16 @@
           v-model="form[item2.formName]"
           :placeholder="item2.placeholder">
         </el-cascader>
+        <!--单选框-->
+        <el-radio-group
+          v-if="item2.formType === 'radio'"
+          v-model="form[item2.formName]">
+          <el-radio
+            v-for="(item3, index3) in item2.options"
+            :label="item3.text">
+            {{item3.text}}
+          </el-radio>
+        </el-radio-group>
       </el-col>
     </el-row>
     <div class="button-row c-flex">
@@ -180,8 +190,16 @@
               {
                 formName: 'nature',
                 formText: '性质',
-                formType: 'input',
-                placeholder: '请选择性质'
+                formType: 'radio',
+                placeholder: '请选择性质',
+                options: [
+                  {
+                    text: '租用'
+                  },
+                  {
+                    text: '拥有'
+                  }
+                ]
               },
               {
                 formName: 'monthlyRent',
