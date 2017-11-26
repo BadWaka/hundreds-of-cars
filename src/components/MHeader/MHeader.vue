@@ -4,7 +4,9 @@
       <div class="header-wrapper-right"></div>
       <header class="header">
         <!--左侧-->
-        <div class="left c-gap-left-large">
+        <div
+          class="left c-gap-left-large c-btn"
+          @click="handleHeaderLeftClick">
           <div class="logo">
             logo
           </div>
@@ -30,7 +32,8 @@
                 <div
                   v-for="(item2, index2) in item.children"
                   :key="index2"
-                  class="mask-item c-gap-inner-left-large transition-animate">
+                  class="mask-item c-gap-inner-left-large transition-animate"
+                  @click="handleMaskItemClick(item2)">
                   {{item2.text}}
                 </div>
               </div>
@@ -87,10 +90,12 @@
             isShowMask: false,
             children: [
               {
-                text: '按品牌'
+                text: '按品牌',
+                link: '/filter'
               },
               {
-                text: '按车型'
+                text: '按车型',
+                link: '/filter'
               }
             ]
           },
@@ -114,7 +119,8 @@
                 text: '金融计算器'
               },
               {
-                text: '贷款申请'
+                text: '贷款申请',
+                link: '/loanapplication'
               },
               {
                 text: '经销商'
@@ -145,6 +151,12 @@
       },
       handleSignUpClick() {
         console.log('点击注册');
+      },
+      handleHeaderLeftClick() {
+        this.$router.push('/index');
+      },
+      handleMaskItemClick(item) {
+        this.$router.push(item.link);
       }
     },
     components: {
@@ -159,7 +171,7 @@
   .header-wrapper2 {
     position: fixed;
     width: 100%;
-    box-shadow: 0 1px 5px 1px $primaryColor;
+    box-shadow: 0 0 5px 1px $primaryColor;
     background: #fff;
     z-index: 8;
   }

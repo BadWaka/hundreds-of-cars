@@ -47,7 +47,7 @@
         </el-radio-group>
       </el-col>
     </el-row>
-    <div class="button-row c-flex">
+    <div class="button-row c-flex c-gap-top-20">
       <el-button
         class="c-gap-top-20"
         type="success"
@@ -59,7 +59,7 @@
 </template>
 
 <script>
-  import options from '../../components/Cascader/cascader-address-options-change';
+  import options from '../../components/Cascader/cascader-address-options';
 
   export default {
     name: 'LoanApplication',
