@@ -22,3 +22,13 @@ html, body {
   user-select: none;
 }
 
+.c-flex {
+  display: flex;
+  align-items: center;
+}
+
+.c-flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
