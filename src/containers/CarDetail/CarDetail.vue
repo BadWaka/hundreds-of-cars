@@ -1,15 +1,54 @@
 <template>
   <section class="car-detail c-gap-inner-header c-container">
     <section class="bottom">
-      <div class="title">{{carInfo.title}}</div>
+      <div class="title c-gap-top-20 c-font-20">
+        {{carInfo.title}}
+      </div>
       <div class="subtitle">
         <span>{{carInfo.price}}</span>
-        <span>官方售价：{{carInfo.officialPrice}}</span>
+        <span class="right">官方售价：{{carInfo.officialPrice}}</span>
       </div>
       <!--基本信息-->
-      <div class="baseInfo">
+      <div class="base-info">
         <div class="row1">汽车基本信息</div>
-        
+        <section class="c-flex base-info-box c-gap-top-20">
+          <div class="item">
+            <span>里程：</span>
+            <span>{{carInfo.mileage}}</span>
+          </div>
+          <div class="item">
+            <span>燃油：</span>
+            <span>{{carInfo.fuelOil}}</span>
+          </div>
+          <div class="item">
+            <span>车身颜色：</span>
+            <span>{{carInfo.carColor}}</span>
+          </div>
+          <div class="item">
+            <span>引擎：</span>
+            <span>{{carInfo.engine}}</span>
+          </div>
+          <div class="item">
+            <span>内饰颜色：</span>
+            <span>{{carInfo.insideColor}}</span>
+          </div>
+          <div class="item">
+            <span>变速器：</span>
+            <span>{{carInfo.transmission}}</span>
+          </div>
+          <div class="item">
+            <span>车架号：</span>
+            <span>{{carInfo.carFrameNumber}}</span>
+          </div>
+          <div class="item">
+            <span>驱动方式：</span>
+            <span>{{carInfo.driveMode}}</span>
+          </div>
+          <div class="item">
+            <span>库存编号：</span>
+            <span>{{carInfo.stockNumber}}</span>
+          </div>
+        </section>
       </div>
     </section>
   </section>
@@ -49,18 +88,15 @@
           title: '二手 2015 一汽大众 CC 1.8T',
           price: '¥100,000',
           officialPrice: '¥170,000',
-          // 基本信息
-          baseInfo: {
-            mileage: '3000公里',  // 里程
-            carColor: '白色', // 车身颜色
-            insideColor: '沙色/黑色', // 内饰颜色
-            carFrameNumber: '12097786178318037', // 车架号
-            stockNumber: '经销商自编',  // 库存编号
-            fuelOil: '汽油', // 燃油
-            engine: 'V8', //  引擎
-            transmission: '8速手自一体',  // 变速器
-            driveMode: '四驱', // 驱动方式
-          },
+          mileage: '3000公里',  // 里程
+          carColor: '白色', // 车身颜色
+          insideColor: '沙色/黑色', // 内饰颜色
+          carFrameNumber: '12097786178318037', // 车架号
+          stockNumber: '经销商自编',  // 库存编号
+          fuelOil: '汽油', // 燃油
+          engine: 'V8', //  引擎
+          transmission: '8速手自一体',  // 变速器
+          driveMode: '四驱', // 驱动方式
           // 亮点配置
           lightSpotConfig: [
             {
@@ -123,6 +159,8 @@
       handleSubmit() {
         console.log(this.form);
       }
+    },
+    mounted() {
     }
   }
 </script>
@@ -130,17 +168,34 @@
 <style lang="scss" scoped>
   @import "../../assets/app";
 
-  .loan-application {
-    padding: $headerHeight+20px 40px 20px 40px;
+  .title {
+    font-weight: bold;
+  }
 
-    .row-left {
-      display: inline-block;
-      width: 100px;
-      flex-shrink: 0;
+  .subtitle {
+
+    .right {
+      margin-left: 100px;
     }
+  }
 
-    .button-row {
-      justify-content: center;
+  .base-info {
+    margin-top: 40px;
+
+    .base-info-box {
+      flex-wrap: wrap;
+
+      .item {
+        display: flex;
+        padding-left: 100px;
+        width: 50%;
+        box-sizing: border-box;
+
+        & > span {
+          display: inline-block;
+          width: 50%;
+        }
+      }
     }
   }
 </style>
