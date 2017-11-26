@@ -60,7 +60,7 @@
             {{item.text}}
           </div>
         </section>
-        <div class="btn-row c-flex c-gap-top">
+        <div class="btn-row">
           <el-button size="mini">更多</el-button>
         </div>
       </div>
@@ -74,7 +74,7 @@
             {{item.text}}
           </div>
         </section>
-        <div class="btn-row c-flex c-gap-top">
+        <div class="btn-row">
           <el-button size="mini">更多</el-button>
         </div>
       </div>
@@ -88,6 +88,43 @@
       <!--经销商信息-->
       <div class="dealer-info">
         经销商信息
+        <section class="wrapper c-flex c-gap-top-20">
+          <div class="left">
+            left
+            <div>row1</div>
+            <div class="row2 c-flex">
+              <div class="left-img"></div>
+              <div class="right c-gap-left">
+                <div class="row11 c-flex">
+                  <!--评分-->
+                  <el-rate
+                    v-model="value5"
+                    disabled
+                    show-score
+                    text-color="#ff9900"
+                    score-template="{value}">
+                  </el-rate>
+                  <span class="c-gap-left-small">566评价</span>
+                </div>
+                <div class="row22">
+                  写车行评价
+                </div>
+                <div class="row33">
+                  地址：
+                </div>
+                <div class="row44">
+                  车行网站：
+                </div>
+                <div class="row55">
+                  今日营业时间：9:00-18:00
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="right">
+            right
+          </div>
+        </section>
       </div>
     </section>
   </section>
@@ -208,6 +245,10 @@
 <style lang="scss" scoped>
   @import "../../assets/app";
 
+  .car-detail {
+    padding: 120px 80px 40px 80px;
+  }
+
   .title {
     font-weight: bold;
   }
@@ -220,6 +261,7 @@
   }
 
   .base-info, .light-spot-config, .standard-config, .dealer-send-word, .dealer-info {
+    position: relative;
     margin-top: 40px;
 
     .box {
@@ -239,7 +281,9 @@
     }
 
     .btn-row {
-      justify-content: flex-end;
+      position: absolute;
+      bottom: -30px;
+      right: 0;
     }
 
     .dealer-send-word-box {
@@ -257,6 +301,39 @@
         padding-left: 100px;
         width: 25%;
         box-sizing: border-box;
+      }
+    }
+  }
+
+  .dealer-info {
+
+    .wrapper {
+      align-items: flex-start;
+
+      .left {
+        width: 50%;
+
+        .row2 {
+          align-items: flex-start;
+
+          .left-img {
+            flex-shrink: 0;
+            width: 220px;
+            height: 140px;
+            background: red;
+          }
+
+          .right {
+
+            .row11, .row22, .row33, .row44, .row55 {
+              margin-bottom: 5px;
+            }
+          }
+        }
+      }
+
+      .right {
+        width: 50%;
       }
     }
   }

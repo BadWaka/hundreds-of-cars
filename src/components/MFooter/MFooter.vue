@@ -41,7 +41,8 @@
   .footer {
     margin: 0 auto;
     width: $contentWidth;
-    padding: 100px 0;
+    padding: 100px 100px;
+    box-sizing: border-box;
     color: #fff;
 
     .title {
