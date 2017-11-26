@@ -1,28 +1,48 @@
 <template>
-  <section class="loan-application c-gap-inner-header">
+  <section class="loan-application c-gap-inner-header c-container">
     <div class="title c-font-20">贷款申请</div>
     <el-row
       v-for="(item, index) in inputs"
       :key="index"
       class="c-gap-top-20"
-      :gutter="100">
+      :gutter="60">
       <el-col
         v-for="(item2, index2) in item.list"
         class="c-flex"
         :span="24/item.list.length">
-        <span class="row-left">{{item2.formText}}</span>
+        <span class="row-left">
+          {{item2.formText}}
+        </span>
+        <!--输入框-->
         <el-input
+          v-if="item2.formType === 'input'"
           v-model="form[item2.formName]"
           :placeholder="item2.placeholder">
         </el-input>
+        <!--日期选择器-->
+        <el-date-picker
+          v-if="item2.formType === 'date'"
+          v-model="form[item2.formName]"
+          type="date"
+          :placeholder="item2.placeholder">
+        </el-date-picker>
+        <!--级联选择器-->
+        <el-cascader
+          v-if="item2.formType === 'cascader'"
+          :options="item2.options"
+          v-model="form[item2.formName]"
+          :placeholder="item2.placeholder">
+        </el-cascader>
       </el-col>
     </el-row>
-    <el-button
-      class="c-gap-top-20"
-      type="success"
-      @click="handleSubmit">
-      提交
-    </el-button>
+    <div class="button-row c-flex">
+      <el-button
+        class="c-gap-top-20"
+        type="success"
+        @click="handleSubmit">
+        提交
+      </el-button>
+    </div>
   </section>
 </template>
 
@@ -78,7 +98,7 @@
               {
                 formName: 'birthday',
                 formText: '生日',
-                formType: 'datePicker',
+                formType: 'date',
                 placeholder: '请输入生日'
               },
               {
@@ -116,8 +136,9 @@
               {
                 formName: 'city',
                 formText: '城市',
-                formType: 'select',
-                placeholder: '请选择城市'
+                formType: 'cascader',
+                placeholder: '请选择城市',
+                options: [1, 2, 3]
               }
             ]
           },
@@ -126,8 +147,9 @@
               {
                 formName: 'province',
                 formText: '省份',
-                formType: 'select',
-                placeholder: '请选择省份'
+                formType: 'cascader',
+                placeholder: '请选择省份',
+                options: [1, 2, 3]
               },
               {
                 formName: 'postcode',
@@ -272,6 +294,11 @@
     .row-left {
       display: inline-block;
       width: 100px;
+      flex-shrink: 0;
+    }
+
+    .button-row {
+      justify-content: center;
     }
   }
 </style>
