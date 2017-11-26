@@ -1,7 +1,7 @@
 <template>
   <section class="car-detail c-gap-inner-header c-container">
     <section class="bottom">
-      <div class="title c-gap-top-20 c-font-20">
+      <div class="title c-font-20">
         {{carInfo.title}}
       </div>
       <div class="subtitle">
@@ -89,12 +89,15 @@
       <div class="dealer-info">
         经销商信息
         <section class="wrapper c-flex c-gap-top-20">
+          <!--左边-->
           <div class="left">
-            left
-            <div>row1</div>
+            <div class="row1">left</div>
+            <!--第二行-->
             <div class="row2 c-flex">
+              <!--左边的图-->
               <div class="left-img"></div>
-              <div class="right c-gap-left">
+              <!--右边的信息-->
+              <div class="right2 c-gap-left">
                 <div class="row11 c-flex">
                   <!--评分-->
                   <el-rate
@@ -121,8 +124,35 @@
               </div>
             </div>
           </div>
+          <!--右边-->
           <div class="right">
-            right
+            <div class="row1">欲想与此经销商购买或卖出请点击这里</div>
+            <!--第二行-->
+            <div class="row2 c-flex">
+              <!--左边的图-->
+              <div class="left-img"></div>
+              <!--右边的信息-->
+              <div class="right2 c-gap-left-20">
+                <el-button
+                  class="btn-item"
+                  type="success"
+                  size="mini">
+                  查看存货
+                </el-button>
+                <el-button
+                  class="btn-item"
+                  type="success"
+                  size="mini">
+                  致电车行
+                </el-button>
+                <el-button
+                  class="btn-item"
+                  type="success"
+                  size="mini">
+                  地图
+                </el-button>
+              </div>
+            </div>
           </div>
         </section>
       </div>
@@ -305,12 +335,14 @@
     }
   }
 
+  /* 经销商信息 */
   .dealer-info {
 
     .wrapper {
       align-items: flex-start;
+      justify-content: space-between;
 
-      .left {
+      .left, .right {
         width: 50%;
 
         .row2 {
@@ -323,17 +355,33 @@
             background: red;
           }
 
-          .right {
+          .right2 {
 
             .row11, .row22, .row33, .row44, .row55 {
               margin-bottom: 5px;
+            }
+
+            .btn-item {
+              margin-bottom: 20px;
+              margin-left: 0;
+              display: block;
+              width: 100px;
+
+              &:first-child {
+                margin-top: 10px;
+              }
             }
           }
         }
       }
 
       .right {
-        width: 50%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+
+        .row1 {
+        }
       }
     }
   }
