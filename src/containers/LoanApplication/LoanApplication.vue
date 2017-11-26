@@ -73,8 +73,8 @@
           phoneNumber: '',
           email: '',
           address: '',  // 常住地址
-          city: '',
-          province: '',
+          city: [], // 城市
+          province: [], // 省份
           postcode: '',
           liveTime: '', // 居住时长
           taxNumber: '', // 税号

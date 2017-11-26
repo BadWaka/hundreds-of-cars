@@ -58,7 +58,8 @@
         <!--金融计算器模态框-->
         <financial-calculator-modal
           class="financial-calculator"
-          v-if="isShowModal">
+          v-if="isShowFinancialCalculatorModal"
+          @close="handleFinancialCalculatorModalClose">
         </financial-calculator-modal>
       </header>
     </section>
@@ -72,7 +73,7 @@
     name: 'Header',
     data() {
       return {
-        isShowModal: true,
+        isShowFinancialCalculatorModal: false,
         navList: [
           {
             text: '地区选择',
@@ -156,8 +157,18 @@
       handleHeaderLeftClick() {
         this.$router.push('/index');
       },
+      // 蒙层项点击事件
       handleMaskItemClick(item) {
+        if (item.text === '金融计算器') {
+          this.isShowFinancialCalculatorModal = true;
+          return;
+        }
         this.$router.push(item.link);
+      },
+      // 关闭金融计算器
+      handleFinancialCalculatorModalClose() {
+        console.log('handleFinancialCalculatorModalClose');
+        this.isShowFinancialCalculatorModal = false;
       }
     },
     components: {

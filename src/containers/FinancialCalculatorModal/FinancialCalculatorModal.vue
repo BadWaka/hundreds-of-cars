@@ -1,5 +1,5 @@
 <template>
-  <modal>
+  <modal @close="handleClose">
     <section class="financial-calculator">
       <div class="title c-font-20">月供粗算</div>
       <div class="row2">{{monthlyInstallmentPaymentRough}}</div>
@@ -11,7 +11,7 @@
           <div class="left">{{item.label}}</div>
           <div class="right c-flex">
             <el-input
-              v-model="input">
+              v-model="form[item.formName]">
             </el-input>
             <span
               class="unit c-gap-left-20">
@@ -29,7 +29,7 @@
   import Modal from '../../components/Modal/Modal.vue';
 
   export default {
-    name: 'FinancialCalculator',
+    name: 'FinancialCalculatorModal',
     data() {
       return {
         monthlyInstallmentPaymentRough: '￥2000.00', // 月供粗算
@@ -83,6 +83,11 @@
     },
     components: {
       Modal
+    },
+    methods: {
+      handleClose() {
+        this.$emit('close');
+      }
     }
   }
 </script>
@@ -91,9 +96,9 @@
   @import "../../assets/app";
 
   .financial-calculator {
-    padding: 40px 60px;
+    padding: 0 20px;
     width: $modalWidth;
-    height: 90vh;
+    height: $modalHeight;
     overflow-y: auto;
     overflow-x: hidden;
     text-align: center;

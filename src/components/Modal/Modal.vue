@@ -1,6 +1,12 @@
 <template>
-  <section class="modal-wrapper">
+  <section
+    class="modal-wrapper"
+    @click.self="handleClose">
     <section class="modal">
+      <i
+        class="el-icon-close c-btn c-font-20 transition-animate"
+        @click.stop="handleClose">
+      </i>
       <slot></slot>
     </section>
   </section>
@@ -11,6 +17,11 @@
     name: 'Modal',
     data() {
       return {}
+    },
+    methods: {
+      handleClose() {
+        this.$emit('close');
+      }
     }
   }
 </script>
@@ -31,8 +42,20 @@
     background: $primaryColor50;
 
     .modal {
+      position: relative;
       background: #fff;
+      padding: 40px;
       box-sizing: border-box;
+
+      .el-icon-close {
+        position: absolute;
+        right: 10px;
+        top: 10px;
+
+        &:hover {
+          transform: rotate(90deg);
+        }
+      }
     }
   }
 
