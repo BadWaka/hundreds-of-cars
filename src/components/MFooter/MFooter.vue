@@ -2,7 +2,12 @@
   <section class="footer-wrapper">
     <footer class="footer">
       <div class="title">{{title}}</div>
-      <div v-for="(item, index) in infos" :key="index" class="info-item">{{item}}</div>
+      <div
+        v-for="(item, index) in infos"
+        :key="index"
+        class="info-item">
+        {{item}}
+      </div>
     </footer>
   </section>
 </template>

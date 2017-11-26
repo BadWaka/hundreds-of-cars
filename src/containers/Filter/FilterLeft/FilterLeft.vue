@@ -26,6 +26,7 @@
             <el-radio
               class="radio-item"
               v-for="(item2, index2) in item.children"
+              :key="index2"
               :label="index2">
               {{item2.text}}
             </el-radio>

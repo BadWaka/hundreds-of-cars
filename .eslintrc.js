@@ -27,6 +27,8 @@ module.exports = {
     'space-before-function-paren': 0,
     'no-unused-vars': 0,
     'key-spacing': 0,
-    'comma-dangle': 0
+    'comma-dangle': 0,
+    'quotes': 0,
+    'no-tabs': 0
   }
 };

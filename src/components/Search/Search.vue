@@ -3,6 +3,7 @@
     <div class="row1 c-gap-inner-left-large">
       <div
         v-for="(item, index) in searchTabs"
+        :key="index"
         class="item c-btn transition-animate">
         {{item.text}}
       </div>
@@ -11,6 +12,7 @@
       <section class="search">
         <div
           v-for="(item, index) in searchList"
+          :key="index"
           class="search-item">
           {{item.text}}
           <i class="el-icon-arrow-down"></i>

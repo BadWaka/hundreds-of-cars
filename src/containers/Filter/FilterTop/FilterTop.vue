@@ -2,7 +2,8 @@
   <section class="filter-top c-gap-top-20">
     <div
       class="item c-btn"
-      v-for="(item, index) in list">
+      v-for="(item, index) in list"
+      :key="index">
       {{item.text}}
       <i class="el-icon-arrow-down icon"></i>
     </div>

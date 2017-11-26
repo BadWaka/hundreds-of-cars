@@ -2,7 +2,9 @@
   <section class="index c-gap-inner-header">
     <!--轮播-->
     <el-carousel height="600px">
-      <el-carousel-item v-for="(item, index) in banners" :key="index">
+      <el-carousel-item
+        v-for="(item, index) in banners"
+        :key="index">
         <div class="img"
              :style="{'background-image':'url('+item.imgSrc+')'}"></div>
       </el-carousel-item>

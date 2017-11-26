@@ -8,6 +8,7 @@
       :gutter="60">
       <el-col
         v-for="(item2, index2) in item.list"
+        :key="index2"
         class="c-flex"
         :span="24/item.list.length">
         <span class="row-left">
@@ -39,6 +40,7 @@
           v-model="form[item2.formName]">
           <el-radio
             v-for="(item3, index3) in item2.options"
+            :key="index3"
             :label="item3.text">
             {{item3.text}}
           </el-radio>
@@ -57,6 +59,8 @@
 </template>
 
 <script>
+  import options from '../../components/Cascader/cascader-address-options-change';
+
   export default {
     name: 'LoanApplication',
     data() {
@@ -148,7 +152,7 @@
                 formText: '城市',
                 formType: 'cascader',
                 placeholder: '请选择城市',
-                options: [1, 2, 3]
+                options: options
               }
             ]
           },
@@ -159,7 +163,7 @@
                 formText: '省份',
                 formType: 'cascader',
                 placeholder: '请选择省份',
-                options: [1, 2, 3]
+                options: options
               },
               {
                 formName: 'postcode',
