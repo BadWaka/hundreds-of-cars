@@ -97,7 +97,7 @@
               <!--左边的图-->
               <div class="left-img"></div>
               <!--右边的信息-->
-              <div class="right2 c-gap-left">
+              <div class="right2 c-gap-left-20">
                 <div class="row11 c-flex">
                   <!--评分-->
                   <el-rate
