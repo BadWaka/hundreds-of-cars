@@ -12,7 +12,7 @@
       </h2>
       <div class="row2">
         <span class="c-font-big">{{price}}</span>
-        <span class="c-gap-left c-color-grey">官方零售价：{{officePrice}}</span>
+        <span class="c-gap-left c-color-grey">官方零售价：{{officialPrice}}</span>
       </div>
       <div class="row4 c-gap-top-20">
         <span>
@@ -76,14 +76,13 @@
         imgSrc: 'http://img.hb.aicdn.com/aaab09042b57e0a1def2b0db78b0d0a724a0e38d15c47a-WdWpa0_fw658',
         title: '新款 2016一汽-大众 CC 1.8T',
         price: '17.70万起',
-        officePrice: '18.9万起',
-        distance: '5公里',
-        mileage: '3000公里',
-        carColor: '白色',
-        insideColor: '沙色/黑色',
-        // 油耗
-        fuelConsumption: '7.5L',
-        carBody: '三厢',
+        officialPrice: '18.9万起',  // 官方售价
+        distance: '5公里',  // 距离
+        mileage: '3000公里',  // 里程
+        carColor: '白色', // 车身颜色
+        insideColor: '沙色/黑色', // 内饰颜色
+        fuelConsumption: '7.5L',  // 油耗
+        carBody: '三厢',  // 车体
         isStar: false,
       }
     },

@@ -3,6 +3,7 @@ import Router from 'vue-router';
 import Index from '../containers/Index/Index.vue';
 import Filter from '../containers/Filter/Filter.vue';
 import LoanApplication from '../containers/LoanApplication/LoanApplication.vue';
+import CarDetail from '../containers/CarDetail/CarDetail.vue';
 
 Vue.use(Router);
 
@@ -27,6 +28,11 @@ export default new Router({
       path: '/loanapplication',
       name: 'LoanApplication',
       component: LoanApplication
+    },
+    {
+      path: '/cardetail',
+      name: 'CarDetail',
+      component: CarDetail
     },
   ]
 })
