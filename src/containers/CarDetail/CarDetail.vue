@@ -50,6 +50,97 @@
           </div>
         </section>
       </div>
+      <!--亮点配置-->
+      <div class="light-spot-config">
+        <div class="row1">亮点配置</div>
+        <section class="c-flex base-info-box c-gap-top-20">
+          <div class="item">
+            <span>里程：</span>
+            <span>{{carInfo.mileage}}</span>
+          </div>
+          <div class="item">
+            <span>燃油：</span>
+            <span>{{carInfo.fuelOil}}</span>
+          </div>
+          <div class="item">
+            <span>车身颜色：</span>
+            <span>{{carInfo.carColor}}</span>
+          </div>
+          <div class="item">
+            <span>引擎：</span>
+            <span>{{carInfo.engine}}</span>
+          </div>
+          <div class="item">
+            <span>内饰颜色：</span>
+            <span>{{carInfo.insideColor}}</span>
+          </div>
+          <div class="item">
+            <span>变速器：</span>
+            <span>{{carInfo.transmission}}</span>
+          </div>
+          <div class="item">
+            <span>车架号：</span>
+            <span>{{carInfo.carFrameNumber}}</span>
+          </div>
+          <div class="item">
+            <span>驱动方式：</span>
+            <span>{{carInfo.driveMode}}</span>
+          </div>
+          <div class="item">
+            <span>库存编号：</span>
+            <span>{{carInfo.stockNumber}}</span>
+          </div>
+        </section>
+      </div>
+      <!--标准配置-->
+      <div class="standard-config">
+        <div class="row1">标准配置</div>
+        <section class="c-flex base-info-box c-gap-top-20">
+          <div class="item">
+            <span>里程：</span>
+            <span>{{carInfo.mileage}}</span>
+          </div>
+          <div class="item">
+            <span>燃油：</span>
+            <span>{{carInfo.fuelOil}}</span>
+          </div>
+          <div class="item">
+            <span>车身颜色：</span>
+            <span>{{carInfo.carColor}}</span>
+          </div>
+          <div class="item">
+            <span>引擎：</span>
+            <span>{{carInfo.engine}}</span>
+          </div>
+          <div class="item">
+            <span>内饰颜色：</span>
+            <span>{{carInfo.insideColor}}</span>
+          </div>
+          <div class="item">
+            <span>变速器：</span>
+            <span>{{carInfo.transmission}}</span>
+          </div>
+          <div class="item">
+            <span>车架号：</span>
+            <span>{{carInfo.carFrameNumber}}</span>
+          </div>
+          <div class="item">
+            <span>驱动方式：</span>
+            <span>{{carInfo.driveMode}}</span>
+          </div>
+          <div class="item">
+            <span>库存编号：</span>
+            <span>{{carInfo.stockNumber}}</span>
+          </div>
+        </section>
+      </div>
+      <!--经销商寄语-->
+      <div class="dealer-send-word">
+        经销商寄语
+        <section class="c-gap-top-20">
+          <div></div>
+        </section>
+      </div>
     </section>
   </section>
 </template>
@@ -179,7 +270,7 @@
     }
   }
 
-  .base-info {
+  .base-info, .light-spot-config, .standard-config, .dealer-send-word {
     margin-top: 40px;
 
     .base-info-box {
