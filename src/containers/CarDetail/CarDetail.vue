@@ -1,5 +1,10 @@
 <template>
   <section class="car-detail c-gap-inner-header c-container">
+    <!--联系我们-->
+    <contact-us
+      class="contact-us">
+    </contact-us>
+    <!--下方-->
     <section class="bottom">
       <div class="title c-font-20">
         {{carInfo.title}}
@@ -167,6 +172,8 @@
 </template>
 
 <script>
+  import ContactUs from './ContactUs/ContactUs.vue';
+
   export default {
     name: 'CarDetail',
     data() {
@@ -270,7 +277,9 @@
         }
       }
     },
-    components: {},
+    components: {
+      ContactUs,
+    },
     methods: {
       handleSubmit() {
         console.log(this.form);
@@ -283,6 +292,10 @@
 
 <style lang="scss" scoped>
   @import "../../assets/app";
+
+  .contact-us {
+    width: 300px;
+  }
 
   .car-detail {
     padding: 120px 80px 40px 80px;
