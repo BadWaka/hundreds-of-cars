@@ -61,6 +61,10 @@
           v-if="isShowFinancialCalculatorModal"
           @close="handleFinancialCalculatorModalClose">
         </financial-calculator-modal>
+        <!--登录注册模态框-->
+        <login-modal>
+
+        </login-modal>
       </header>
     </section>
   </section>
@@ -68,6 +72,7 @@
 
 <script>
   import FinancialCalculatorModal from '../../containers/FinancialCalculatorModal/FinancialCalculatorModal.vue';
+  import LoginModal from '../../containers/LoginModal/LoginModal.vue';
 
   export default {
     name: 'Header',
@@ -172,7 +177,8 @@
       }
     },
     components: {
-      FinancialCalculatorModal
+      FinancialCalculatorModal,
+      LoginModal
     }
   }
 </script>
