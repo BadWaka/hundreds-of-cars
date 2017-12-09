@@ -1,11 +1,23 @@
 <template>
   <modal @close="handleClose">
     <section class="login-modal">
-      <div class="title c-font-20">登录|注册</div>
-      <div>电子邮箱/手机号码</div>
-      <el-input v-model="form.name"></el-input>
-      <div>密码</div>
-      <el-input v-model="form.name"></el-input>
+      <div class="title c-font-20">
+        登录|注册
+      </div>
+
+      <section class="bottom">
+        <div class="c-font-big">电子邮箱/手机号码</div>
+        <el-input
+          class="c-gap-top"
+          v-model="form.name"></el-input>
+        <div
+          class="c-font-big c-gap-top-20">密码
+        </div>
+        <el-input
+          class="c-gap-top"
+          v-model="form.name"></el-input>
+      </section>
+
     </section>
   </modal>
 </template>
@@ -82,11 +94,20 @@
 
   .login-modal {
     padding: 0 20px;
-    width: $modalWidth;
+    width: 700px;
     height: 400px;
     overflow-y: auto;
     overflow-x: hidden;
     box-sizing: border-box;
+
+    .title {
+      display: flex;
+      justify-content: center;
+    }
+
+    .bottom {
+      margin-top: 60px;
+    }
   }
 
 </style>
