@@ -1,16 +1,20 @@
 <template>
   <section class="person-info c-gap-inner-header c-container">
-    个人信息
+    <collection></collection>
   </section>
 </template>
 
 <script>
+  import Collection from './Collection/Collection';
+
   export default {
     name: 'PersonInfo',
     data() {
       return {}
     },
-    components: {},
+    components: {
+      Collection
+    },
     methods: {},
     mounted() {
     }
