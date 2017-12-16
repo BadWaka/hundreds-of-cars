@@ -57,13 +57,13 @@
         </nav>
         <!--金融计算器模态框-->
         <financial-calculator-modal
-          class="financial-calculator"
           v-if="isShowFinancialCalculatorModal"
+          class="financial-calculator"
           @close="handleFinancialCalculatorModalClose">
         </financial-calculator-modal>
         <!--登录注册模态框-->
-        <login-modal>
-
+        <login-modal
+          v-if="isShowLoginModal">
         </login-modal>
       </header>
     </section>
@@ -79,6 +79,7 @@
     data() {
       return {
         isShowFinancialCalculatorModal: false,
+        isShowLoginModal: false,
         navList: [
           {
             text: '地区选择',
