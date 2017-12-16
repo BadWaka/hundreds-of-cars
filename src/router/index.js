@@ -4,6 +4,7 @@ import Index from '../containers/Index/Index.vue';
 import Filter from '../containers/Filter/Filter.vue';
 import LoanApplication from '../containers/LoanApplication/LoanApplication.vue';
 import CarDetail from '../containers/CarDetail/CarDetail.vue';
+import PersonInfo from '../containers/PersonInfo/PersonInfo.vue';
 
 Vue.use(Router);
 
@@ -34,5 +35,10 @@ export default new Router({
       name: 'CarDetail',
       component: CarDetail
     },
+    {
+      path: '/personinfo',
+      name: 'PersonInfo',
+      component: PersonInfo
+    }
   ]
 })

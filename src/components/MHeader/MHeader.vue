@@ -183,7 +183,8 @@
           isShowMask: false,
           children: [
             {
-              text: '寻车笔记'
+              text: '寻车笔记',
+              link: '/personinfo'
             },
             {
               text: '发布卖车'
@@ -227,6 +228,7 @@
       },
       handleLoginMaskClick(item, index) {
         console.log('item', item, index);
+        this.$router.push(item.link);
       },
       // 关闭金融计算器
       handleFinancialCalculatorModalClose() {
