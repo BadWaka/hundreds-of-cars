@@ -213,9 +213,11 @@
           carFrameNumber: '12097786178318037', // 车架号
           stockNumber: '经销商自编',  // 库存编号
           fuelOil: '汽油', // 燃油
+          fuelConsumption: '7.5L', // 油耗
           engine: 'V8', //  引擎
           transmission: '8速手自一体',  // 变速器
           driveMode: '四驱', // 驱动方式
+          carBody: '三厢',  // 车体
           // 亮点配置
           lightSpotConfig: [
             {
