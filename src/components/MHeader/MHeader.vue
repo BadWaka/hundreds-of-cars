@@ -40,19 +40,51 @@
             </transition>
           </div>
           <!--登录注册-->
-          <div class="login">
+          <div
+            v-if="!isLogin"
+            class="login">
             <i class="iconfont icon-round-user-new"></i>
-            <div class="text c-gap-top">
-          <span
-            class="sign-in transition-animate c-btn"
-            @click="handleSignInClick">
-            登录
-          </span>/<span
+            <div class="text c-gap-top-small">
+              <span
+                class="sign-in transition-animate c-btn"
+                @click="handleSignInClick">
+                登录
+              </span>/<span
               class="sign-up transition-animate c-btn"
               @click="handleSignUpClick">
-            注册
-          </span>
+                注册
+              </span>
             </div>
+          </div>
+          <!--已登录-->
+          <div
+            v-if="isLogin"
+            class="login c-btn"
+            @mouseenter="handleLoginMouseEnter()"
+            @mouseleave="handleLoginMouseLeave()">
+            <div
+              class="avatar"
+              :style="{
+                'background-image': 'url(' + userInfo.avatar + ')'
+              }">
+            </div>
+            <div class="text c-gap-top-small">
+              下午好，赵女士
+            </div>
+            <!--浮层-->
+            <transition name="fade">
+              <div
+                class="mask"
+                v-show="userInfo.isShowMask">
+                <div
+                  v-for="(item, index) in userInfo.children"
+                  :key="index"
+                  class="mask-item c-gap-inner-left-large transition-animate"
+                  @click="handleLoginMaskClick(item, index)">
+                  {{item.text}}
+                </div>
+              </div>
+            </transition>
           </div>
         </nav>
         <!--金融计算器模态框-->
@@ -78,6 +110,7 @@
     name: 'Header',
     data() {
       return {
+        isLogin: true,
         isShowFinancialCalculatorModal: false,
         isShowLoginModal: false,
         navList: [
@@ -144,7 +177,22 @@
               }
             ]
           }
-        ]
+        ],
+        userInfo: {
+          avatar: 'http://img.hb.aicdn.com/d1e4b888292b51aabc1d773d567f8a11fe1411c31428d1-c0wvIo_fw658',
+          isShowMask: false,
+          children: [
+            {
+              text: '寻车笔记'
+            },
+            {
+              text: '发布卖车'
+            },
+            {
+              text: '物流订单'
+            }
+          ]
+        }
       }
     },
     methods: {
@@ -153,6 +201,12 @@
       },
       handleMouseLeave(index) {
         this.navList[index].isShowMask = false;
+      },
+      handleLoginMouseEnter() {
+        this.userInfo.isShowMask = true;
+      },
+      handleLoginMouseLeave() {
+        this.userInfo.isShowMask = false;
       },
       handleSignInClick() {
         console.log('点击登录');
@@ -170,6 +224,9 @@
           return;
         }
         this.$router.push(item.link);
+      },
+      handleLoginMaskClick(item, index) {
+        console.log('item', item, index);
       },
       // 关闭金融计算器
       handleFinancialCalculatorModalClose() {
@@ -298,9 +355,11 @@
       }
 
       .login {
+        position: relative;
         display: flex;
         flex-direction: column;
         justify-content: center;
+        align-items: center;
         width: 120px;
         height: 100%;
         background: $primaryColor;
@@ -309,11 +368,42 @@
           font-size: 22px;
         }
 
+        .avatar {
+          display: inline-block;
+          height: 30px;
+          width: 30px;
+          border-radius: 50%;
+          background: no-repeat center;
+          background-size: cover;
+        }
+
         .text {
           font-size: 12px;
 
           span:hover {
             opacity: .7;
+          }
+        }
+
+        .mask {
+          position: absolute;
+          width: 120px;
+          top: $headerHeight;
+          box-sizing: border-box;
+          border-left: 1px solid $secondColor;
+          z-index: 9;
+          background: #fff;
+          color: #000;
+
+          .mask-item {
+            height: 40px;
+            line-height: 40px;
+            text-align: left;
+
+            &:hover {
+              background: $secondColor;
+              color: #fff;
+            }
           }
         }
       }
