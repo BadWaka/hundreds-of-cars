@@ -224,11 +224,15 @@
           this.isShowFinancialCalculatorModal = true;
           return;
         }
-        this.$router.push(item.link);
+        if (item.link) {
+          this.$router.push(item.link);
+        }
       },
       handleLoginMaskClick(item, index) {
         console.log('item', item, index);
-        this.$router.push(item.link);
+        if (item.link) {
+          this.$router.push(item.link);
+        }
       },
       // 关闭金融计算器
       handleFinancialCalculatorModalClose() {
