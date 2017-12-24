@@ -1,6 +1,6 @@
 <template>
   <section class="recently-viewed c-gap-top-20">
-    <div class="c-font-20">最近浏览</div>
+    <div class="c-font-20">您可能还喜欢</div>
     <section class="c-gap-top-20">
       <el-carousel
         :interval="40000"
