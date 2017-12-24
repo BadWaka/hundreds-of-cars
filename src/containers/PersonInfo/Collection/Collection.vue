@@ -65,7 +65,7 @@
 
   .collections {
     justify-content: space-between;
-    padding: 0 40px;
+    padding: 0 10px;
   }
 
 </style>

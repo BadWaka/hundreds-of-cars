@@ -5,8 +5,14 @@
     :style="{
       'background-image':'url(' + data.imgSrc + ')'
     }"
-    @click.stop="handleClick">
-
+    @click="handleClick">
+    <el-button
+      class="view-btn"
+      type="success"
+      size="mini"
+      @click="handleViewBtnClick">
+      查看
+    </el-button>
   </section>
 </template>
 
@@ -23,6 +29,9 @@
     methods: {
       handleClick() {
         this.$emit('click');
+      },
+      handleViewBtnClick() {
+        this.$emit('clickViewBtn');
       }
     }
   }
@@ -32,11 +41,17 @@
   @import "../../../assets/app";
 
   .car-item-view-btn {
-    width: 400px;
-    height: 0;
-    padding-bottom: 30%;
+    position: relative;
+    width: 300px;
+    height: 200px;
     background: no-repeat center;
     background-size: cover;
+
+    .view-btn {
+      position: absolute;
+      bottom: 10px;
+      right: 10px;
+    }
   }
 
 </style>
