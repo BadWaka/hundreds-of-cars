@@ -1,14 +1,14 @@
 <template>
   <section class="filter c-gap-inner-header">
     <!--轮播-->
-    <el-carousel height="600px">
-      <el-carousel-item
-        v-for="(item, index) in banners"
-        :key="index">
-        <div class="img"
-             :style="{'background-image':'url('+item.imgSrc+')'}"></div>
-      </el-carousel-item>
-    </el-carousel>
+    <!--<el-carousel height="600px">-->
+    <!--<el-carousel-item-->
+    <!--v-for="(item, index) in banners"-->
+    <!--:key="index">-->
+    <!--<div class="img"-->
+    <!--:style="{'background-image':'url('+item.imgSrc+')'}"></div>-->
+    <!--</el-carousel-item>-->
+    <!--</el-carousel>-->
     <!--版心-->
     <section class="c-container">
       <!--下方-->

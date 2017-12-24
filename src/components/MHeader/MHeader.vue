@@ -187,7 +187,8 @@
               link: '/personinfo'
             },
             {
-              text: '发布卖车'
+              text: '发布卖车',
+              link: '/publishcarinfo'
             },
             {
               text: '物流订单'

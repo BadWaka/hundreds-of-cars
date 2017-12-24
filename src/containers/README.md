@@ -11,5 +11,6 @@
 - PersonInfo 个人信息
   - Collection 收藏的车
   - RecentlyViewed 最近浏览
+ - PublishCarInfo 发布卖车
   
 

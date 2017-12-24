@@ -5,6 +5,7 @@ import Filter from '../containers/Filter/Filter.vue';
 import LoanApplication from '../containers/LoanApplication/LoanApplication.vue';
 import CarDetail from '../containers/CarDetail/CarDetail.vue';
 import PersonInfo from '../containers/PersonInfo/PersonInfo.vue';
+import PublishCarInfo from '../containers/PublishCarInfo/PublishCarInfo.vue';
 
 Vue.use(Router);
 
@@ -39,6 +40,11 @@ export default new Router({
       path: '/personinfo',
       name: 'PersonInfo',
       component: PersonInfo
+    },
+    {
+      path: '/publishcarinfo',
+      name: 'PublishCarInfo',
+      component: PublishCarInfo
     }
   ]
 })
