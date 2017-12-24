@@ -191,7 +191,8 @@
               link: '/publishcarinfo'
             },
             {
-              text: '物流订单'
+              text: '物流订单',
+              link: '/logisticsorder'
             }
           ]
         }

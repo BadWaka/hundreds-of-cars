@@ -253,7 +253,14 @@
       }
     },
     components: {},
-    methods: {},
+    methods: {
+      handlePictureCardPreview() {
+        console.log('handlePictureCardPreview');
+      },
+      handleRemove() {
+        console.log('handleRemove');
+      }
+    },
     mounted() {
     }
   }

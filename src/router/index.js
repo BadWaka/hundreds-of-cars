@@ -6,6 +6,7 @@ import LoanApplication from '../containers/LoanApplication/LoanApplication.vue';
 import CarDetail from '../containers/CarDetail/CarDetail.vue';
 import PersonInfo from '../containers/PersonInfo/PersonInfo.vue';
 import PublishCarInfo from '../containers/PublishCarInfo/PublishCarInfo.vue';
+import LogisticsOrder from '../containers/LogisticsOrder/LogisticsOrder.vue';
 
 Vue.use(Router);
 
@@ -45,6 +46,11 @@ export default new Router({
       path: '/publishcarinfo',
       name: 'PublishCarInfo',
       component: PublishCarInfo
+    },
+    {
+      path: '/logisticsorder',
+      name: 'LogisticsOrder',
+      component: LogisticsOrder
     }
   ]
 })
