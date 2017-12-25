@@ -14,27 +14,36 @@
       placeholder="姓名">
     </el-input>
     <el-input
-      class="c-gap-top"
+      class="c-gap-top-20"
       v-model="formData.email"
       placeholder="电子邮件">
     </el-input>
     <el-input
-      class="c-gap-top"
+      class="c-gap-top-20"
       v-model="formData.phone"
       placeholder="手机">
     </el-input>
-    联系方式选择
-    <div class="bottom">
+    <section class="c-gap-top-20">
+      联系方式选择
+      <div class="bottom c-gap-top c-flex">
+        <el-button
+          size="medium">邮件
+        </el-button>
+        <el-button
+          size="medium">电话
+        </el-button>
+        <el-button
+          size="medium">短信
+        </el-button>
+      </div>
+    </section>
+    <section class="c-gap-top-20">
       <el-button
-        size="medium">邮件
+        size="medium"
+        type="success">
+        成功按钮
       </el-button>
-      <el-button
-        size="medium">电话
-      </el-button>
-      <el-button
-        size="medium">短信
-      </el-button>
-    </div>
+    </section>
   </section>
 </template>
 
@@ -64,5 +73,9 @@
 
 <style lang="scss" scoped>
   @import "../../../assets/app";
+
+  .bottom {
+    
+  }
 
 </style>
