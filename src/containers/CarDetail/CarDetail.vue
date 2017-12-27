@@ -1,9 +1,22 @@
 <template>
   <section class="car-detail c-gap-inner-header c-container">
-    <!--联系我们-->
-    <contact-us
-      class="contact-us">
-    </contact-us>
+    <section class="c-gap-bottom-20 top">
+      <section class="left">
+        <el-carousel
+          height="500px">
+          <el-carousel-item
+            v-for="(item, index) in banners"
+            :key="index">
+            <div class="img"
+                 :style="{'background-image':'url('+item.imgSrc+')'}"></div>
+          </el-carousel-item>
+        </el-carousel>
+      </section>
+      <!--联系我们-->
+      <contact-us
+        class="contact-us">
+      </contact-us>
+    </section>
     <!--下方-->
     <section class="bottom">
       <div class="title c-font-20">
@@ -178,6 +191,17 @@
     name: 'CarDetail',
     data() {
       return {
+        banners: [
+          {
+            imgSrc: 'http://desk.fd.zol-img.com.cn/t_s1600x900c5/g5/M00/0F/09/ChMkJlauza6IOuzjAAQRQ6b4SjAAAH9HQJb4NcABBFb471.jpg'
+          },
+          {
+            imgSrc: 'http://desk.fd.zol-img.com.cn/t_s1920x1080c5/g5/M00/0F/09/ChMkJ1auza6ICkGRAAJCuW6kUvcAAH9HQJp9QgAAkLR000.jpg'
+          },
+          {
+            imgSrc: 'http://desk.fd.zol-img.com.cn/t_s1920x1200c5/g5/M00/0F/09/ChMkJlauza6IQed-ABe8YwuAco8AAH9HQLHsPAAF7x7859.jpg'
+          }
+        ],
         form: {
           lastName: '',
           firstName: '',
@@ -294,6 +318,21 @@
 
 <style lang="scss" scoped>
   @import "../../assets/app";
+
+  .el-carousel__item .img {
+    width: 100%;
+    height: 100%;
+    background: center no-repeat;
+    background-size: cover;
+  }
+
+  .top {
+    display: flex;
+
+    .left {
+      width: 500px;
+    }
+  }
 
   .contact-us {
     width: 300px;

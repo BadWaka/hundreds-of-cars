@@ -37,7 +37,7 @@
         </el-button>
       </div>
     </section>
-    <section class="c-gap-top-20">
+    <section class="c-gap-top-20 c-flex btn-layout">
       <el-button
         size="medium"
         type="success">
@@ -75,7 +75,11 @@
   @import "../../../assets/app";
 
   .bottom {
-    
+    justify-content: space-between;
+  }
+
+  .btn-layout {
+    justify-content: center;
   }
 
 </style>
