@@ -41,7 +41,7 @@
       <el-button
         size="medium"
         type="success">
-        成功按钮
+        提交
       </el-button>
     </section>
   </section>

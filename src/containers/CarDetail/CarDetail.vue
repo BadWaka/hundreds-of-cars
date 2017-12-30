@@ -1,6 +1,8 @@
 <template>
   <section class="car-detail c-gap-inner-header c-container">
+    <!--上方-->
     <section class="c-gap-bottom-20 top">
+      <!--左侧-->
       <section class="left">
         <el-carousel
           height="500px">
@@ -11,21 +13,44 @@
                  :style="{'background-image':'url('+item.imgSrc+')'}"></div>
           </el-carousel-item>
         </el-carousel>
+        <!--左下方-->
+        <section class="left-bottom c-gap-top-20">
+          <!--标题-->
+          <div class="title c-font-20">
+            {{carInfo.title}}
+          </div>
+          <!--副标题-->
+          <div class="subtitle">
+            <span>{{carInfo.price}}</span>
+            <span class="right">官方售价：{{carInfo.officialPrice}}</span>
+          </div>
+          <div class="c-flex c-gap-top-20 btn-layout">
+            <div class="btn1">
+              <i class="iconfont icon-calculator"></i>
+              月供粗算
+            </div>
+            <div class="btn2">
+              <i class="iconfont icon-edit"></i>
+              量身定制贷款方案
+            </div>
+          </div>
+        </section>
       </section>
-      <!--联系我们-->
-      <contact-us
-        class="contact-us">
-      </contact-us>
+      <!--上方右侧-->
+      <section class="top-right">
+        <div class="c-gap-bottom">车行名字</div>
+        <div class="c-gap-bottom">车行编码</div>
+        <div class="c-gap-bottom">车行地址</div>
+        <div class="c-gap-bottom">联系电话</div>
+        <div class="c-gap-bottom">在线咨询</div>
+        <!--联系我们-->
+        <contact-us
+          class="contact-us">
+        </contact-us>
+      </section>
     </section>
     <!--下方-->
     <section class="bottom">
-      <div class="title c-font-20">
-        {{carInfo.title}}
-      </div>
-      <div class="subtitle">
-        <span>{{carInfo.price}}</span>
-        <span class="right">官方售价：{{carInfo.officialPrice}}</span>
-      </div>
       <!--基本信息-->
       <div class="base-info">
         <div class="row1">汽车基本信息</div>
@@ -328,18 +353,30 @@
 
   .top {
     display: flex;
+    justify-content: space-between;
 
     .left {
-      width: 500px;
+      width: 600px;
+
+      .left-bottom {
+
+        .btn-layout {
+
+          .btn2 {
+            margin-left: 40px;
+          }
+        }
+      }
+    }
+
+    .contact-us {
+      margin-top: 40px;
+      width: 300px;
     }
   }
 
-  .contact-us {
-    width: 300px;
-  }
-
   .car-detail {
-    padding: 120px 80px 40px 80px;
+    padding-top: 120px;
   }
 
   .title {
