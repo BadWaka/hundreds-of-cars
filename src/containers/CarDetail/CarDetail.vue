@@ -49,6 +49,8 @@
         </contact-us>
       </section>
     </section>
+    <!--分隔线-->
+    <section class="c-divider c-gap-top-40 c-gap-bottom-20"></section>
     <!--下方-->
     <section class="bottom">
       <!--基本信息-->
@@ -360,6 +362,17 @@
 
       .left-bottom {
 
+        .title {
+          font-weight: bold;
+        }
+
+        .subtitle {
+
+          .right {
+            margin-left: 100px;
+          }
+        }
+
         .btn-layout {
 
           .btn2 {
@@ -379,15 +392,8 @@
     padding-top: 120px;
   }
 
-  .title {
-    font-weight: bold;
-  }
-
-  .subtitle {
-
-    .right {
-      margin-left: 100px;
-    }
+  .bottom {
+    padding: 0 40px;
   }
 
   .base-info, .light-spot-config, .standard-config, .dealer-send-word, .dealer-info {

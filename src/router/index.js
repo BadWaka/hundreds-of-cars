@@ -52,5 +52,11 @@ export default new Router({
       name: 'LogisticsOrder',
       component: LogisticsOrder
     }
-  ]
+  ],
+  // 自定义路由切换时页面如何滚动
+  scrollBehavior(to, from, savedPosition) {
+    // return 期望滚动到哪个的位置
+    // 对于所有路由导航，简单地让页面滚动到顶部
+    return {x: 0, y: 0};
+  }
 })
