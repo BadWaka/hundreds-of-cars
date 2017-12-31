@@ -95,7 +95,8 @@
         </financial-calculator-modal>
         <!--登录注册模态框-->
         <login-modal
-          v-if="isShowLoginModal">
+          v-if="isShowLoginModal"
+          @close="handleLoginModalClose">
         </login-modal>
       </header>
     </section>
@@ -110,7 +111,7 @@
     name: 'Header',
     data() {
       return {
-        isLogin: true,
+        isLogin: false,
         isShowFinancialCalculatorModal: false,
         isShowLoginModal: false,
         navList: [
@@ -213,9 +214,11 @@
       },
       handleSignInClick() {
         console.log('点击登录');
+        this.isShowLoginModal = true;
       },
       handleSignUpClick() {
         console.log('点击注册');
+        this.isShowLoginModal = true;
       },
       handleHeaderLeftClick() {
         this.$router.push('/index');
@@ -230,6 +233,7 @@
           this.$router.push(item.link);
         }
       },
+      // 登录项蒙层点击事件
       handleLoginMaskClick(item, index) {
         console.log('item', item, index);
         if (item.link) {
@@ -240,6 +244,9 @@
       handleFinancialCalculatorModalClose() {
         console.log('handleFinancialCalculatorModalClose');
         this.isShowFinancialCalculatorModal = false;
+      },
+      handleLoginModalClose() {
+        this.isShowLoginModal = false;
       }
     },
     components: {
