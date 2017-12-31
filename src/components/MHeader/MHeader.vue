@@ -245,6 +245,7 @@
         console.log('handleFinancialCalculatorModalClose');
         this.isShowFinancialCalculatorModal = false;
       },
+      // 登录模态框关闭事件
       handleLoginModalClose() {
         this.isShowLoginModal = false;
       }
