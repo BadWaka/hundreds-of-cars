@@ -14,8 +14,22 @@
       <!--搜索-->
       <search class="search c-gap-inner-top-20"></search>
 
+      <!--搜索-->
       <section>
-        
+        <el-select v-model="value" placeholder="请选择">
+          <el-option
+            v-for="item in options"
+            :key="item.value"
+            :label="item.label"
+            :value="item.value">
+          </el-option>
+        </el-select>
+      </section>
+
+      <section class="c-flex">
+        <m-select></m-select>
+        <m-select></m-select>
+        <m-select></m-select>
       </section>
     </section>
   </section>
@@ -24,6 +38,7 @@
 <script>
   import MFooter from '../../components/MFooter/MFooter.vue';
   import Search from '../../components/Search/Search.vue';
+  import MSelect from '../../components/MSelect/MSelect.vue';
 
   export default {
     name: 'Index',
@@ -44,7 +59,8 @@
     },
     components: {
       Search,
-      MFooter
+      MFooter,
+      MSelect
     }
   }
 </script>
